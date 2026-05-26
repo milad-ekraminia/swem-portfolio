@@ -1,0 +1,99 @@
+@use '/src/assets/styles/mixins' as *;
+
+.report-results {
+  background-color: white;
+  width: 100%;
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  &__header {
+    border-bottom: 1px solid var(--border-secondary);
+    display: flex;
+    height: 72px;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+
+    &-tabs {
+      width: 520px;
+    }
+    &-title {
+      color: var(--text-secondary-700);
+      font-size: var(--text-md);
+      font-style: normal;
+      font-weight: 600;
+      line-height: var(--text-md);
+    }
+  }
+  &__content {
+    width: 100%;
+    .table-wrapper {
+      border: none !important;
+      border-radius: 0 !important;
+    }
+    &-chart {
+      width: 100%;
+      padding: var(--spacing-3xl) var(--spacing-xl);
+      height: fit-content;
+    }
+    &-chart.hidden {
+      position: absolute;
+    }
+  }
+}
+
+.dropdown-content {
+  max-width: 200px !important;
+  min-width: 150px !important;
+  padding: 0 !important;
+  .custom-legend {
+    &__item {
+      @include flex-center(flex-start, center);
+      gap: var(--spacing-md);
+      cursor: pointer;
+      &-disabled {
+        @include text-style(text-placeholder-subtle, text-xs, 400, text-xs);
+        .custom-legend__item-status {
+          background-color: var(--text-placeholder-subtle) !important;
+        }
+        .custom-legend__item-title-toggler {
+          @include text-style(text-placeholder-subtle, text-xs, 400, text-xs);
+        }
+      }
+      &-status {
+        @include flex-center(center, center);
+        width: 16px;
+        height: 16px;
+        padding: 2px;
+        flex-shrink: 0;
+        border-radius: 100%;
+      }
+      &-title-toggler {
+        background-color: unset;
+        text-align: left;
+        @include text-style(text-quaternary-500, text-xs, 400, text-xs);
+      }
+    }
+  }
+  .dropdown-body {
+    .custom-legend-drop-down {
+      @include flex-center(flex-start, flex-start);
+      flex-direction: column;
+      gap: var(--spacing-xl);
+      width: 100%;
+      padding: var(--spacing-lg);
+
+      &__show-all {
+        width: 100%;
+        @include flex-center(flex-start, center);
+        gap: var(--spacing-md);
+      }
+      &__items {
+        @include flex-center(flex-start, flex-start);
+        flex-direction: column;
+        gap: 6px;
+        width: 100%;
+      }
+    }
+  }
+}

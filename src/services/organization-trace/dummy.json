@@ -1,0 +1,14 @@
+[
+  {
+    "deviceId": 272,
+    "deviceDescription": "Kys. Plot A Inv. 03",
+    "forecastValue": 372084.0,
+    "productionValue": 400084.0
+  },
+  {
+    "deviceId": 266,
+    "deviceDescription": "Kys. Plot A Inv. 04",
+    "forecastValue": 562084.0,
+    "productionValue": 852084.0
+  }
+]

@@ -1,0 +1,20 @@
+@use '/src/assets/styles/mixins' as *;
+
+.pages-header {
+  @include flex-center(space-between, center);
+  grid-column: span 12;
+  height: 94px;
+  align-self: stretch;
+  display: flex;
+  padding: var(--spacing-2xl) var(--spacing-3xl) var(--spacing-2xl)
+    var(--spacing-4xl);
+
+  border-bottom: 1px solid var(--border-primary);
+  background: var(--bg-secondary-alt);
+  &-small {
+    grid-column: span 9;
+  }
+  &__title {
+    @include text-style(text-secondary-700, display-xs, 600, display-xs);
+  }
+}

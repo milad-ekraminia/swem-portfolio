@@ -1,0 +1,38 @@
+@use '/src/assets/styles/mixins' as *;
+
+[dir='rtl'] .sidebar {
+  // RTL-specific positioning overrides
+  top: 0;
+  right: 0;
+  left: auto;
+
+  &-toggle-button {
+    top: 80px;
+    left: -10px;
+    right: auto;
+    z-index: 1000;
+    cursor: pointer;
+  }
+
+  &__menu {
+    &-expanded {
+      padding: 0px;
+      padding-right: var(--spacing-lg);
+    }
+  }
+
+  .sidebar__menu__item
+    .nav-parent
+    .icon-parent
+    .sidebar-accordion
+    .accordion__details-item,
+  .accordion__details {
+    margin-left: 0;
+    margin-right: var(--spacing-2xl);
+  }
+
+  .sub-item {
+    margin-left: 0;
+    margin-right: var(--spacing-2xl);
+  }
+}

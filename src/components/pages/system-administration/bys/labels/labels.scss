@@ -1,0 +1,45 @@
+@use '/src/assets/styles/mixins' as *;
+
+.labels {
+  &-types-modal {
+    width: 100%;
+  }
+
+  &-form-content {
+    @include flex-center(flex-start, flex-start);
+    flex-direction: column;
+    width: 100%;
+    padding: var(--spacing-xl) var(--spacing-3xl);
+    gap: var(--spacing-3xl);
+    max-height: 500px;
+    overflow: hidden;
+    overflow-y: auto;
+
+    .toggles-box {
+      display: flex;
+      align-items: center;
+      width: 45%;
+      justify-content: space-between;
+      // gap: var(--spacing-10xl);
+    }
+
+    .table-row__cell {
+      padding: var(--spacing-xl) var(--spacing-xs) !important;
+    }
+
+    .grid {
+      width: 100%;
+      gap: var(--spacing-3xl);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .table-wrapper {
+      border: 1px solid var(--border-secondary);
+    }
+  }
+}
+
+.select-input__dropdown.max-h-200 {
+  max-height: 200px !important;
+}

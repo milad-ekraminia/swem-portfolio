@@ -1,0 +1,151 @@
+@use '/src/assets/styles/mixins' as *;
+
+.devices-model-modbus-info {
+  width: 100%;
+  height: 100%;
+  @include flex-center(flex-start, flex-start);
+  flex-direction: column;
+  background: var(--bg-primary);
+  border-radius: var(--radius-xl);
+
+  &__header {
+    @include flex-center(flex-start, flex-start);
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    width: 100%;
+    border: none;
+
+    .devices-model-modbus-info-table-header {
+      width: 100%;
+      padding: var(--spacing-xl);
+
+      @include flex-center(space-between, center);
+      .title {
+        @include flex-center(flex-start, center);
+        gap: var(--spacing-sm);
+        button {
+          background: unset;
+        }
+      }
+      .actions {
+        @include flex-center(flex-start, center);
+        gap: var(--spacing-xl);
+      }
+      .export {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+        overflow: auto;
+        width: 256px !important;
+        &__list {
+          display: flex;
+          flex-direction: column;
+          overflow: auto;
+          max-height: 170px;
+          &-item {
+            @include text-style(text-primary-900, text-sm, 400, text-sm);
+
+            padding: var(--spacing-xl) 0;
+            border-bottom: 1px solid var(--border-secondary);
+            display: flex;
+            justify-content: flex-start;
+            gap: var(--spacing-sm);
+            align-items: center;
+          }
+        }
+        .custom-button-secondary {
+          border: 1px solid var(--button-secondary-color-border);
+          .label {
+            color: var(--button-secondary-color-fg);
+          }
+        }
+      }
+    }
+  }
+  &__body {
+    @include flex-center(flex-start, flex-start);
+    padding: var(--spacing-xl);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-3xl);
+    align-self: stretch;
+    .devices-model-modbus-info-search-boxes {
+      @include flex-center(space-between, center);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-secondary);
+      background: var(--bg-primary-hover);
+      gap: var(--spacing-3xl);
+      padding: var(--spacing-xl);
+
+      width: 100%;
+      &__item {
+        flex: 1;
+      }
+    }
+  }
+}
+.new-device-model-mod-bus-modal {
+  @include flex-center(flex-start, flex-start);
+  flex-direction: column;
+  width: 100%;
+
+  &__header {
+    width: 100%;
+    @include flex-center(space-between, center);
+    padding: var(--spacing-3xl);
+    gap: var(--spacing-xl);
+    align-self: stretch;
+    border-bottom: 1px solid var(--border-secondary);
+    & > button {
+      background: unset;
+    }
+    & > div {
+      @include flex-center(flex-start, center);
+      gap: var(--spacing-xl);
+    }
+    &-icon {
+      border-radius: var(--radius-full);
+      background: var(--bg-brand-secondary);
+      @include flex-center(center, center);
+      width: 48px;
+      height: 48px;
+      padding: 12px;
+    }
+    &-title {
+      @include text-style(text-primary-900, text-lg, 600, text-lg);
+    }
+  }
+  &__footer {
+    padding: var(--spacing-3xl);
+    @include flex-center(center, center);
+    border-top: 1px solid var(--border-secondary);
+    width: 100%;
+    gap: var(--spacing-lg);
+
+    .custom-button {
+      width: 100%;
+    }
+  }
+  .dv-submit-or-cancel-buttons {
+    width: 100%;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 24px;
+    overflow: scroll;
+    padding: var(--spacing-xl) var(--spacing-3xl);
+    .deviceModelDescription {
+      grid-column: span 2;
+    }
+    .searchable-select {
+      .skeleton__box {
+        height: 44px;
+      }
+    }
+    .description {
+      grid-column: span 2;
+    }
+  }
+}

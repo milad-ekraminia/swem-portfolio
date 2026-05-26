@@ -1,0 +1,34 @@
+@use '/src/assets/styles/mixins' as *;
+
+[dir='rtl'] {
+  .year-date-input {
+    & > button {
+      background-color: unset;
+      @include flex-center(center, center);
+      display: flex;
+      padding: var(--spacing-md) var(--spacing-lg);
+      justify-content: center;
+      align-items: center;
+      gap: var(--spacing-md);
+      align-self: stretch;
+      transform: rotate(180deg);
+      transform-origin: center;
+    }
+  }
+
+  .date-picker-modal__datePicker {
+    border-right: 1px solid var(--border-secondary);
+    border-left: none;
+    width: 100%;
+
+    .date-picker,
+    .rmdp-wrapper {
+      width: 100%;
+      margin: 0 auto;
+
+      .rmdp-top-class {
+        justify-content: center;
+      }
+    }
+  }
+}

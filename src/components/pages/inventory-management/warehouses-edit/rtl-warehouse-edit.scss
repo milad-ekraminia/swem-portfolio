@@ -1,0 +1,13 @@
+// RTL-specific styles for warehouse edit page
+[dir='rtl'] {
+  .warehouse {
+    &-edit {
+      &-information-level {
+        .toggle-wrapper {
+          min-width: 170px;
+        }
+      }
+    }
+  }
+}
+

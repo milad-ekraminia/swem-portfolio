@@ -1,0 +1,23 @@
+@use '/src/assets/styles/mixins' as *;
+
+.formulas {
+  &-types-modal {
+    width: 100%;
+  }
+  &-form-content {
+    @include flex-center(flex-start, flex-start);
+    flex-direction: column;
+    width: 100%;
+    padding: var(--spacing-xl) var(--spacing-3xl);
+    gap: var(--spacing-2xl);
+    max-height: 500px;
+    overflow: hidden;
+    overflow-y: auto;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      gap: var(--spacing-3xl);
+    }
+  }
+}

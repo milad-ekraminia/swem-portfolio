@@ -1,0 +1,9 @@
+@use '/src/assets/styles/mixins' as *;
+
+[dir='rtl'] .select-input {
+  &__select {
+    span {
+      text-align: right;
+    }
+  }
+}

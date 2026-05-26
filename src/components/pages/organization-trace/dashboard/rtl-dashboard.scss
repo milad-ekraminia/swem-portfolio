@@ -1,0 +1,52 @@
+@use '/src/assets/styles/mixins' as *;
+
+[dir='rtl'] {
+  // RTL-specific tweaks only. Base styles live in dashboard.scss
+
+  .content-container .drawer {
+    .widget-container {
+      .energy-widget {
+        // Reverse info chips order for RTL
+        .info-data {
+          display: flex;
+          flex-direction: row-reverse;
+          gap: 5px;
+        }
+
+        .widget-body {
+          .data {
+            & > .widget {
+              // Mirror background illustration positions for RTL
+              & > img {
+                position: absolute;
+                top: -35px;
+                left: -45px;
+                right: auto;
+                z-index: 0;
+                object-fit: cover;
+                height: 120%;
+                transform: rotateY(180deg) scaleX(1);
+
+                &.wind-turbine {
+                  left: -20px;
+                  right: auto;
+                  transform: rotateY(180deg) scaleX(-1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .card-detail-modal {
+    .modal-body {
+      .item {
+        .data {
+          direction: ltr;
+        }
+      }
+    }
+  }
+}

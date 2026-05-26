@@ -1,0 +1,26 @@
+@use '/src/assets/styles/mixins' as *;
+
+.product-form-content {
+  @include flex-center(flex-start, flex-start);
+  flex-direction: column;
+  width: 100%;
+  padding: var(--spacing-xl) var(--spacing-3xl);
+  gap: 24px;
+  max-height: 500px;
+  overflow: hidden;
+  overflow-y: auto;
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 24px;
+  }
+
+  .checkboxes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    gap: 24px;
+  }
+}

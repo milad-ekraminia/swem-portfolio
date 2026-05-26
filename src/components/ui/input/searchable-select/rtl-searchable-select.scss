@@ -1,0 +1,12 @@
+@use '/src/assets/styles/mixins' as *;
+
+[dir='rtl'] .searchable-select {
+  &__control {
+    &-value {
+      .select-icon {
+        left: 1rem; // Tailwind right-2 = 8px = 0.5rem
+        right: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@use '/src/assets/styles/mixins' as *;
+
+.cards-wrapper {
+  display: grid;
+  align-self: stretch;
+  gap: var(--spacing-xl);
+  grid-column: span 12;
+  @include grid-layout(4);
+
+  &-notification-outage {
+    @include grid-layout(3, 'lg', 1);
+  }
+}

@@ -1,0 +1,7 @@
+@use '/src/assets/styles/mixins' as *;
+
+[dir='rtl'] .modal-close {
+  top: 20px;
+  left: 20px;
+  right: auto;
+}

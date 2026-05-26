@@ -1,0 +1,91 @@
+@use '/src/assets/styles/mixins' as *;
+.notification-modal {
+  background-color: var(--base-white);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  padding: var(--space-4) 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  min-height: 250px;
+  @include flex-center(space-between, flex-start);
+  flex-direction: column;
+  gap: var(--space-4);
+
+  &__header {
+    @include flex-center(space-between, center);
+    z-index: 1;
+    padding: var(--spacing-lg) var(--spacing-3xl) var(--spacing-lg)
+      var(--spacing-3xl);
+    border-bottom: 1px solid var(--gray-light-200);
+    width: 100%;
+    gap: var(--spacing-xl);
+    &-pattern {
+      position: absolute;
+
+      z-index: -1;
+      top: 10px;
+      left: 9px;
+    }
+    &-icon {
+      flex-shrink: 0;
+      background-color: var(--warning-100);
+      padding: var(--space-3);
+      @include flex-center(center, center);
+      border-radius: var(--radius-xl);
+      &-danger {
+        background: var(--bg-error-secondary);
+        border-radius: 100%;
+      }
+      &-add {
+        // background: var(--bg-brand-secondary);
+        background: #fef0c7;
+        border-radius: var(--radius-full);
+      }
+    }
+    &-content {
+      flex-grow: 1;
+      &-title {
+        @include text-style(text-primary-900, text-lg, 600, text-lg);
+        margin: 0;
+      }
+      &-description {
+        @include text-style(gray-light-600, text-sm, 400, text-sm);
+      }
+    }
+    &-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  &__body {
+    @include text-style(text-tertiary-600, text-md, 400, text-md);
+
+    overflow: auto;
+    max-height: 400px;
+    width: 100%;
+    z-index: 1;
+  }
+  &__footer {
+    @include flex-center(space-between, center);
+    padding: var(--space-3) var(--space-6) var(--space-1-5) var(--space-6);
+    border-top: 1px solid var(--gray-light-200);
+    width: 100%;
+    label {
+      @include flex-center(flex-start, center);
+      @include text-style(gray-light-700, text-sm, 500, text-sm);
+      gap: var(--space-2);
+    }
+    &-buttons {
+      @include flex-center(flex-end, center);
+      gap: var(--space-3);
+      width: 100%;
+      &-full-width {
+        width: 100%;
+        & .custom-button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

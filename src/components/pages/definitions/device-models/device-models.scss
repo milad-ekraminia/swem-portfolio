@@ -1,0 +1,82 @@
+@use '/src/assets/styles/mixins' as *;
+
+.edit-device-model-form {
+  @include flex-center(flex-start, flex-start);
+  flex-direction: column;
+  &__header {
+    width: 100%;
+    @include flex-center(space-between, center);
+    padding: var(--spacing-3xl);
+    gap: var(--spacing-xl);
+    align-self: stretch;
+    border-bottom: 1px solid var(--border-secondary);
+    & > button {
+      background: unset;
+    }
+    & > div {
+      @include flex-center(flex-start, center);
+      gap: var(--spacing-xl);
+    }
+    &-icon {
+      border-radius: var(--radius-full);
+      background: var(--bg-brand-secondary);
+      @include flex-center(center, center);
+      width: 48px;
+      height: 48px;
+      padding: 12px;
+    }
+    &-title {
+      @include text-style(text-primary-900, text-lg, 600, text-lg);
+    }
+  }
+  &__footer {
+    padding: var(--spacing-3xl);
+    @include flex-center(center, center);
+    border-top: 1px solid var(--border-secondary);
+    width: 100%;
+    gap: var(--spacing-lg);
+
+    .custom-button {
+      width: 100%;
+    }
+  }
+  .dv-submit-or-cancel-buttons {
+    width: 100%;
+  }
+}
+.device-models-form-content {
+  @include flex-center(flex-start, flex-start);
+  flex-direction: column;
+  width: 100%;
+  padding: var(--spacing-xl) var(--spacing-md) var(--spacing-xl)
+    var(--spacing-3xl);
+  gap: 24px;
+  max-height: 500px;
+  overflow: hidden;
+  &__header {
+    @include flex-center(space-between, flex-start);
+    width: 100%;
+    height: 40px;
+    grid-column: span 2;
+
+    .checkbox-group {
+      @include flex-center(flex-start, center);
+      gap: var(--spacing-4xl);
+    }
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 24px;
+    overflow: scroll;
+    .deviceModelDescription {
+      grid-column: span 2;
+    }
+    .searchable-select {
+      .skeleton__box {
+        height: 44px;
+      }
+    }
+  }
+}

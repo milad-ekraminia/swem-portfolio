@@ -1,0 +1,11 @@
+@use '/src/assets/styles/mixins' as *;
+
+[dir='rtl'] .user-profile {
+  gap: var(--spacing-lg);
+
+  &__signout {
+    &-expanded {
+      transform: rotate(180deg);
+    }
+  }
+}

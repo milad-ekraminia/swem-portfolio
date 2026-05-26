@@ -1,0 +1,13 @@
+@use '/src/assets/styles/mixins' as *;
+
+.dv-edit-delete-buttons {
+  @include flex-center(flex-start, center);
+  gap: var(--spacing-xl);
+  button {
+    background: transparent;
+  }
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

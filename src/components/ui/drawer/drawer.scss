@@ -1,0 +1,97 @@
+@use '/src/assets/styles/mixins' as *;
+
+.sideBar-modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100vh;
+  transition: width 0.4s ease-out;
+  @include flex-center(flex-end, center);
+  cursor: auto;
+  z-index: 1000;
+  &-expanded {
+    width: 45vw;
+    &-lg {
+      width: 75vw;
+    }
+    &-full {
+      width: 100vw;
+    }
+  }
+  .sideBar-modal-content {
+    background-color: white;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+    position: relative;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    padding: var(--spacing-xl) 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+    &__close-btn {
+      position: absolute;
+      top: 2%;
+      right: 2%;
+      background: none;
+    }
+    @media screen and (max-width: 1024px) {
+      overflow: auto;
+      width: 70%;
+    }
+    &-headerless {
+      padding: 0;
+      .sideBar-modal-content__body {
+        padding: 0;
+      }
+    }
+    &__header {
+      @include flex-center(space-between, center);
+      @include text-style(text-primary-900, text-lg, 600, text-lg);
+      // flex-direction: column;
+      align-self: stretch;
+      width: 100%;
+      padding: var(--spacing-lg) var(--spacing-3xl) var(--spacing-2xl)
+        var(--spacing-3xl);
+      gap: var(--spacing-xl);
+      border-bottom: 1px solid var(--border-secondary);
+      &-close-btn {
+        background: none;
+      }
+    }
+    &__body {
+      width: 100%;
+      padding: var(--spacing-xl) var(--spacing-3xl);
+      height: 100%;
+      overflow: auto;
+    }
+    &__footer {
+      width: 100%;
+      padding: var(--spacing-3xl);
+      @include flex-center(space-around, center);
+      gap: var(--spacing-xl);
+      button {
+        width: 50%;
+      }
+    }
+  }
+
+  .sideBar-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: var(--font-size-display-xs);
+    cursor: pointer;
+    color: var(--gray-dark-700);
+  }
+}
+.drawer-outside-click {
+  position: fixed;
+  inset: 0px;
+  z-index: 60;
+  background-color: rgba(0, 0, 0, 0.6);
+}

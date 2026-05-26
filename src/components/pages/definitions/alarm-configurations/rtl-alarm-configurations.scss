@@ -1,0 +1,17 @@
+@use '/src/assets/styles/mixins' as *;
+
+[dir='rtl'] .alarm-configuration-form-content {
+  .stepper {
+    &__circles {
+      .line {
+        width: 85.5%;
+
+        right: 6%;
+        &-completed {
+          right: 5%;
+          width: 85.5%;
+        }
+      }
+    }
+  }
+}

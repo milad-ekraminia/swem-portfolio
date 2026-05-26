@@ -1,0 +1,58 @@
+@use '/src/assets/styles/mixins' as *;
+
+// RTL-specific overrides only. Base styles live in organization-trace.scss
+
+[dir='rtl'] {
+  // tree
+  .tree-container {
+    .tree-node {
+      &__item {
+        // RTL-specific padding adjustments
+        padding: 0 0 0 var(--spacing-lg);
+
+        &::before,
+        &-body:before {
+          // RTL-specific positioning for tree connectors
+          right: -13px;
+          left: auto;
+          border-top: 0;
+          border-right: 0;
+          border-radius: 0 0 0 4px;
+        }
+      }
+    }
+
+    .child-node-list {
+      // RTL-specific margin adjustments
+      margin-right: 1.5rem;
+      margin-left: 0;
+    }
+  }
+
+  .dv-tree-view-node:after {
+    // RTL-specific positioning for tree view connectors
+    right: 12px;
+    left: auto;
+    border-top: 0;
+    border-right: 0;
+    border-radius: 0 0 0 4px;
+  }
+
+  .dv-tree-view-node-title:after {
+    // RTL-specific positioning for tree view node titles
+    left: -12px;
+    right: auto;
+    border-right: 0;
+    border-top: 0;
+    border-radius: 0 0 0 7px;
+  }
+
+  // tree drawer
+  .org-trace-tree-drawer {
+    &-expanded {
+      // RTL-specific margin adjustments
+      margin-right: 80px;
+      margin-left: 0;
+    }
+  }
+}

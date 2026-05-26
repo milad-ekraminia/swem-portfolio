@@ -1,0 +1,29 @@
+@use '/src/assets/styles/mixins' as *;
+
+.user-organization-profiles {
+  &-types-modal {
+    width: 100%;
+  }
+  &-form-content {
+    @include flex-center(flex-start, flex-start);
+    flex-direction: column;
+    width: 100%;
+    padding: var(--spacing-xl) var(--spacing-3xl);
+    gap: var(--spacing-2xl);
+    max-height: 500px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  .expand-icon {
+    margin-right: var(--spacing-2xl);
+  }
+  .sub-item {
+    margin-left: var(--spacing-7xl);
+  }
+  .expanded {
+    background-color: var(--bg-brand-primary) !important;
+    .cell-content {
+      color: var(--text-secondary-700) !important;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@use '/src/assets/styles/mixins' as *;
+
+.mimic-element-form {
+  &__upload-area {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    &-warning {
+      display: flex;
+      align-items: start;
+      gap: var(--spacing-xs);
+      @include text-style(text-tertiary-600, text-sm, 500, text-sm);
+      width: 100%;
+      span {
+        text-align: justify;
+      }
+    }
+  }
+  &__form-group {
+    min-height: fit-content;
+    border: 1px solid var(--border-secondary);
+    background-color: var(--bg-primary-hover);
+    border-radius: var(--radius-md);
+    width: 100%;
+    overflow: hidden;
+    &-header {
+      padding: var(--spacing-xl);
+      background-color: white;
+      @include text-style(text-secondary-700, text-md, 600, text-md);
+      border-bottom: 1px solid var(--border-secondary);
+    }
+    &-content {
+      padding: var(--spacing-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-3xl);
+      .row {
+        display: flex;
+        align-items: start;
+        gap: var(--spacing-3xl);
+      }
+    }
+  }
+}

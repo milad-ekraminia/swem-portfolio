@@ -1,0 +1,11 @@
+@use '/src/assets/styles/mixins' as *;
+[dir='rtl'] .information-cards {
+  &__content {
+    .count {
+      flex-direction: row-reverse;
+    }
+    .description {
+      flex-direction: row-reverse;
+    }
+  }
+}

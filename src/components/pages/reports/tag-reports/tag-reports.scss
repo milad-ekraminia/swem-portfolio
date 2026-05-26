@@ -1,0 +1,11 @@
+@use '/src/assets/styles/mixins' as *;
+
+.tag-reports {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  width: 100%;
+  &__filter {
+    width: fit-content;
+  }
+}

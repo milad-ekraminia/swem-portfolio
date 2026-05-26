@@ -1,0 +1,107 @@
+@use '/src/assets/styles/mixins' as *;
+.dropdown-container {
+  // width: 100%;
+  position: relative;
+  display: inline-block;
+  & > button {
+    background: none;
+    border: none;
+    outline: none;
+  }
+  .dropdown-trigger {
+    color: var(--base-white);
+    border: none;
+    padding: var(--space-2) var(--space-4);
+    cursor: pointer;
+    border-radius: var(--radius-xs);
+  }
+}
+
+body:has(.modal-content) .outside-modal-dropdown {
+  z-index: 1000 !important;
+}
+
+.portal-dropdown-content {
+  position: absolute;
+  background-color: var(--base-white);
+
+  @include border-style(var(--border-secondary), var(--radius-md));
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: var(--space-2);
+  margin-top: var(--space-2);
+  z-index: 60;
+  width: 240px;
+  & button {
+    background: none;
+    outline: none;
+    // @include flex-center(flex-start, center);
+    gap: var(--spacing-md);
+  }
+  &.dropdown-down {
+    top: 100%;
+    left: 0;
+  }
+
+  &.dropdown-up {
+    left: 0;
+  }
+
+  &.dropdown-left {
+    top: 0;
+    right: 100%;
+  }
+
+  &.dropdown-right {
+    bottom: 100%;
+    left: 100%;
+  }
+  &-header {
+    padding: var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .dropdown-title {
+      color: var(--text-primary-900);
+      font-size: var(--spacing-xl);
+      font-style: normal;
+      font-weight: 500;
+      line-height: var(--spacing-3xl);
+    }
+
+    .dropdown-close {
+      background-color: transparent;
+      border: none;
+      color: var(--gray-dark-500);
+      font-size: var(--font-size-text-sm);
+      cursor: pointer;
+
+      &:hover {
+        color: var(--base-black);
+      }
+    }
+  }
+  .dropdown-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    max-height: 380px;
+    // overflow-y: auto;
+  }
+  .dropdown-bottom-buttons {
+    padding: var(--spacing-md);
+    display: flex;
+    justify-content: flex-end;
+    justify-self: end;
+    border-top: solid 1px var(--border-secondary);
+    width: 100%;
+    div {
+      display: flex;
+      justify-content: flex-end;
+      gap: var(--spacing-lg);
+    }
+  }
+}
+
+.dropdown-trigger-button {
+  width: 100%;
+}

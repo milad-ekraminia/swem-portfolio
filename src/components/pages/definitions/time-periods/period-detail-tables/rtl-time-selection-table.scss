@@ -1,0 +1,41 @@
+// RTL-specific styles for time selection table
+[dir='rtl'] {
+  .time-selection-table {
+    &__body-wrapper {
+      &-add-button {
+        border-right: solid 1px var(--border-secondary);
+      }
+    }
+
+    &__header {
+      &-title {
+        border-right: none;
+        border-left: solid 1px var(--border-secondary);
+      }
+
+      &-column {
+        border-right: none;
+        border-left: solid 1px var(--border-secondary);
+      }
+
+      &-column:last-of-type {
+        border-left: none !important;
+      }
+    }
+
+    &__body {
+      &-row {
+        &-title {
+          border-right: none;
+          border-left: solid 1px var(--border-secondary);
+        }
+
+        &-column {
+          border-right: none;
+          border-left: solid 1px var(--border-secondary);
+        }
+      }
+    }
+  }
+}
+

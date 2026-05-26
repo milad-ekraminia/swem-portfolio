@@ -1,0 +1,11 @@
+.error {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.25rem; // This corresponds to gap-1 (usually 0.25rem)
+  &__content {
+    font-size: 0.75rem; // This corresponds to text-xs in Tailwind (usually 0.75rem)
+    font-weight: 400; // This corresponds to font-normal in Tailwind
+    color: #f87171; // This corresponds to text-red-500 in Tailwind (a red shade)
+  }
+}

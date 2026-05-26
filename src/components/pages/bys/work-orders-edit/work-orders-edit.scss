@@ -1,0 +1,55 @@
+@use '/src/assets/styles/mixins' as *;
+
+.work-orders {
+  &-edit {
+    width: 100%;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    &-form-content {
+      @include flex-center(flex-start, flex-start);
+      flex-direction: column;
+      width: 100%;
+      padding: var(--spacing-xl) var(--spacing-3xl);
+      gap: var(--spacing-6xl);
+      max-height: 665px;
+      overflow: hidden;
+      overflow-y: auto;
+    }
+    &-information-level {
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--bg-secondary-alt);
+      display: grid;
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl) var(--spacing-3xl);
+      width: 100% !important;
+      gap: 24px;
+      .date-input {
+        justify-content: flex-end;
+      }
+    }
+    &-workers-table {
+      border: none;
+    }
+    .add-worker-form {
+      gap: var(--spacing-3xl);
+      justify-content: flex-end;
+      align-items: flex-end;
+      .inputs-wrapper {
+        width: 100%;
+        display: flex !important;
+        flex-direction: row;
+        gap: var(--spacing-xl);
+        flex-wrap: nowrap;
+      }
+    }
+    .dv-submit-or-cancel-buttons {
+      width: fit-content;
+      padding: 0px;
+      border: none;
+      align-self: flex-end;
+      button {
+        min-width: 100px;
+      }
+    }
+  }
+}

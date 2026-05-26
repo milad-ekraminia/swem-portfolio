@@ -1,0 +1,12 @@
+@use '/src/assets/styles/mixins' as *;
+
+[dir='rtl'] .device-form-content {
+  .stepper {
+    &__circles {
+      .line {
+        width: 65%;
+        right: 22%;
+      }
+    }
+  }
+}

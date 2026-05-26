@@ -1,0 +1,120 @@
+@use '/src/assets/styles/mixins' as *;
+
+.plants-edit {
+  gap: 0 !important;
+
+  &__title {
+    display: flex;
+    height: 72px;
+    padding: var(--spacing-xl, 16px);
+    gap: var(--spacing-md);
+    align-items: center;
+    align-self: stretch;
+    border-top-right-radius: var(--radius-xl);
+    border-top-left-radius: var(--radius-xl);
+    border: 1px solid var(--border-secondary);
+    background: var(--bg-primary);
+    color: var(--text-secondary-700);
+    font-weight: 600;
+    font-size: var(--font-size-text-md);
+  }
+
+  &__body {
+    display: flex;
+    padding: var(--spacing-xl);
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--spacing-4xl);
+    align-self: stretch;
+    border: 1px solid var(--border-secondary);
+    border-top: none;
+    background: var(--bg-primary);
+    border-bottom-right-radius: var(--radius-xl);
+    border-bottom-left-radius: var(--radius-xl);
+
+    .plant-transfer-records-table {
+      @include flex-center(flex-start, center);
+      background: var(--bg-secondary-alt);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      gap: 24px;
+      border: 1px solid var(--border-secondary);
+
+      /* Shadows/shadow-xs-skeuomorphic */
+      box-shadow:
+        2px 2px 2px 2px var(--shadow-skeumorphic-inner-border) inset,
+        2px -2px 1px 2px var(--shadow-skeumorphic-inner) inset,
+        2px 1px 2px 2px var(--Colors-Effects-Shadows-shadow-xs);
+    }
+
+    .transfer-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 21px;
+      width: 21px;
+      min-width: 18px;
+      border-radius: 50%;
+
+      &.input {
+        border: 1px solid #22c55e85;
+        background-color: #22c55e28;
+
+        .indicator-dot {
+          height: 11px;
+          width: 11px;
+          padding: 2px;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          border: 2px solid #287e477a;
+        }
+      }
+
+      &.output {
+        // Tailwind's pink-500
+        border: 1px solid #ec486b;
+        background-color: #ec486b2a;
+
+        .indicator-dot {
+          height: 11px;
+          width: 11px;
+          padding: 2px;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          border: 2px solid #ec486b;
+        }
+      }
+    }
+
+    .transfer-description {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-lg);
+
+      &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--spacing-xs);
+      }
+    }
+  }
+}
+
+.plants-form-content {
+  display: flex;
+  padding: var(--spacing-3xl);
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing-3xl);
+  align-self: stretch;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-secondary);
+  background: var(--bg-primary-hover);
+}

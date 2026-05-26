@@ -1,0 +1,76 @@
+@use '/src/assets/styles/mixins' as *;
+
+.bys-work-orders {
+  .table-actions-box {
+    @include flex-center(flex-start, center);
+    gap: var(--spacing-xl);
+  }
+  .table-wrapper {
+    .export {
+      width: 100% !important;
+    }
+  }
+}
+.bys-work-orders-modal {
+  .accordion {
+    overflow: hidden;
+    &__header {
+      background-color: var(--bg-brand-primary);
+    }
+    &__details-expanded {
+      padding: 0;
+      margin: 0;
+    }
+
+    .table-wrapper {
+      border-radius: 0;
+    }
+  }
+}
+
+.add-work-order-form-content {
+  @include flex-center(flex-start, flex-start);
+  flex-direction: column;
+  width: 100%;
+  padding: var(--spacing-xl) var(--spacing-3xl);
+  gap: 24px;
+  max-height: 500px;
+  overflow: hidden;
+  overflow-y: auto;
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    gap: 24px;
+  }
+
+  .two-column-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 24px;
+  }
+
+  .checkboxes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    gap: 24px;
+  }
+}
+.edit-work-order-modal {
+  &-button-box {
+    @include flex-center(center, center);
+
+    gap: var(--spacing-sm);
+  }
+}
+.filter-modal-buttons {
+  width: 100%;
+  justify-content: end;
+  &-inner {
+    display: flex;
+    gap: var(--spacing-lg);
+  }
+}

@@ -1,0 +1,10 @@
+.empty {
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem; // This corresponds to gap-1 (usually 0.25rem)
+    object-fit: contain;
+  }
+}

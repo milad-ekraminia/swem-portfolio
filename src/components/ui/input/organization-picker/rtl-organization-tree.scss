@@ -1,0 +1,47 @@
+@use '/src/assets/styles/mixins' as *;
+
+// tree
+[dir='rtl'] .tree-container {
+  .tree-node {
+    &__item {
+      padding-left: var(--spacing-md);
+      padding-right: 0;
+
+      &::before,
+      &-body:before {
+        right: -13px;
+        left: auto;
+        border-left: 0;
+        border-radius: 0 0 4px 0;
+      }
+    }
+  }
+
+  .child-node-list {
+    margin-right: 1.5rem;
+    margin-left: 0;
+  }
+}
+
+[dir='rtl'] .dv-tree-view-node:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  right: 12px;
+  top: 38px;
+  width: 100px;
+  height: calc(100% - 58px);
+  @include border-style(var(--fg-quaternary-500), 0);
+  border-style: dashed !important;
+  border-radius: 0 0 0 4px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 1px dashed var(--fg-quaternary-500) !important;
+}
+
+[dir='rtl'] .dv-tree-view-node-title:after {
+  right: -12px;
+  left: auto;
+  border-left: 0;
+  border-radius: 0 0 7px 0;
+}

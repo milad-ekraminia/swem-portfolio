@@ -1,0 +1,21 @@
+@use '/src/assets/styles/mixins' as *;
+
+[dir='rtl'] .general-map-tooltip {
+  // RTL-specific overrides only. Base styles live in map-graph.scss
+
+  .tooltip-body {
+    & > .widget {
+      & > img {
+        // RTL-specific positioning for background images
+        left: -0px;
+        right: auto;
+        transform: scaleX(-1);
+        top: -30px;
+      }
+    }
+  }
+
+  .info-data {
+    direction: ltr;
+  }
+}

@@ -1,0 +1,7 @@
+@use '/src/assets/styles/mixins' as *;
+[dir='rtl'] .custom-button {
+  .label {
+    display: flex;
+    max-height: fit-content;
+  }
+}

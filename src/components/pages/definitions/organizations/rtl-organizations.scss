@@ -1,0 +1,22 @@
+@use '/src/assets/styles/mixins' as *;
+[dir='rtl'] {
+  .dv-organization-modal__content
+    .dv-plant-detail__body-table__header-cell:first-child {
+    border-radius: 0 var(--radius-xl) 0 0;
+    border-right: 0;
+    border-left: 1px solid var(--border-secondary);
+  }
+  .dv-organization-modal__content
+    .dv-plant-detail__body-table__header-cell:last-child {
+    border-radius: var(--radius-xl) 0 0 0;
+    border-left: 0;
+    border-right: unset;
+  }
+
+  .dv-organization-modal__content
+    .dv-plant-detail__body-table__body-column-cell:first-child {
+    border-left: 1px solid var(--border-secondary);
+    border-right: 0;
+  }
+}
+ 

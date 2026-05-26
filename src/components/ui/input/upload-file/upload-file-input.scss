@@ -1,0 +1,75 @@
+@use '/src/assets/styles/mixins' as *;
+
+.dv-upload-file-input {
+  @include flex-center(flex-start, flex-start);
+  flex-direction: column;
+  width: 100%;
+  gap: var(--spacing-md);
+
+  .dv-label-text {
+    @include text-style(text-secondary-700, text-sm, 500, text-sm);
+
+    .text-error-600 {
+      color: var(--error-600);
+    }
+  }
+
+  &__label {
+    @include flex-center(center, center);
+    // gap: var(--spacing-xl) var(--spacing-3xl);
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    cursor: pointer;
+    width: 100%;
+    height: var(--spacing-10xl);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-secondary);
+    background: #fff;
+
+    &__box {
+      @include flex-center(center, center);
+      flex-direction: column;
+      gap: var(--spacing-lg);
+      width: 100%;
+      padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-3xl);
+      .upload-text {
+        text-align: center;
+      }
+      .upload-title {
+        display: flex;
+        gap: 4px;
+        @include text-style(text-tertiary-600, text-sm, 400, text-sm);
+      }
+      .upload-desc {
+        @include text-style(text-tertiary-600, text-xs, 400, text-xs);
+      }
+      .upload-drag {
+        @include text-style(button-tertiary-color-fg, text-sm, 600, text-sm);
+      }
+      &-content {
+        @include flex-center(center, center);
+        width: 40px;
+        height: 40px;
+        padding: var(--spacing-md);
+        border-radius: var(--radius-md);
+        border: 1px solid #e4e7ec;
+        background: var(--bg-primary);
+
+        box-shadow: 0px 1px 2px 0px var(--shadow-xs);
+        &__svg {
+          width: var(--spacing-4xl);
+          height: var(--spacing-4xl);
+          color: var(--brand-600);
+        }
+      }
+    }
+  }
+
+  &__label-error {
+    border-color: var(--border-error);
+  }
+
+  .hidden {
+    display: none;
+  }
+}

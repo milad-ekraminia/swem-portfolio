@@ -1,0 +1,22 @@
+@use '/src/assets/styles/mixins' as *;
+
+.status-tag {
+  display: flex;
+  padding: var(--spacing-xxs) var(--spacing-md) var(--spacing-xxs)
+    var(--spacing-md);
+  align-items: center;
+  gap: var(--spacing-xs);
+  border-radius: var(--radius-full);
+  width: fit-content;
+  border: 1px solid;
+  @include flex-center(center, center);
+  .title {
+    @include text-style(text-secondary-700, text-xs, 500, text-xs);
+  }
+  // .dot {
+  //   width: 8px;
+  //   height: 8px;
+  //   flex-shrink: 0;
+  //   border-radius: 100%;
+  // }
+}

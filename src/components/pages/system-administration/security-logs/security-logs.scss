@@ -1,0 +1,58 @@
+@use '/src/assets/styles/mixins' as *;
+
+.security-logs {
+  &__body {
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding: 0 !important;
+    &-content {
+      padding: var(--radius-4xl);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-4xl);
+    }
+  }
+  &__header {
+    @include text-style(text-secondary-700, text-md, 600, text-md);
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    height: 72px;
+    width: 100%;
+    border-bottom: 1px solid var(--border-secondary);
+  }
+  &__wrapper {
+    padding: var(--spacing-xl);
+  }
+
+  &__filters {
+    padding: var(--spacing-3xl);
+    width: 100%;
+    border: 1px solid var(--border-secondary);
+    background-color: var(--bg-primary-hover);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4xl);
+    &-actions {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      gap: var(--spacing-xl);
+      button span {
+        display: flex !important;
+        align-items: center !important;
+        gap: var(--spacing-xs) !important;
+      }
+    }
+    &-content {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--spacing-3xl);
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.skeleton {
+  height: 100%; // h-full in Tailwind
+  width: 100%; // w-full in Tailwind
+  animation: pulse 1.5s infinite; // animate-pulse in Tailwind (default duration 1.5s, infinite loop)
+  align-self: stretch; // self-stretch in Tailwind
+  &__box {
+    display: flex; // flex in Tailwind
+    justify-content: center; // flex-center (horizontally centered)
+    align-items: center; // flex-center (vertically centered)
+    flex-grow: 1; // grow in Tailwind
+    border-radius: 0.375rem; // rounded-md in Tailwind (0.375rem corresponds to the default rounded-md)
+    background-color: #d1d5db; // bg-gray-300 in Tailwind (this is a gray shade)
+    &-label {
+      font-size: 0.875rem; // This corresponds to text-sm in Tailwind (usually 0.875rem)
+    }
+  }
+}
+
+// Add the animation keyframes (if not already defined globally)
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

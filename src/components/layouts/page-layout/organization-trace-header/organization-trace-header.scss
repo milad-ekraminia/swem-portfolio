@@ -1,0 +1,29 @@
+@use '/src/assets/styles/mixins' as *;
+.pages-header {
+  .bread-crumb-container {
+    @include flex-center(flex-start, flex-start);
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    &__tree-toggler {
+      background-color: unset;
+      @include flex-center(flex-start, center);
+      @include text-style(text-quaternary-500, text-sm, 500, text-sm);
+    }
+    &__detail-toggler {
+      @include flex-center(center, center);
+      border-radius: var(--radius-full);
+      border: 1px solid var(--button-secondary-border);
+      background: var(--button-secondary-bg);
+
+      /* Shadows/shadow-xs-skeuomorphic */
+      box-shadow:
+        0px 0px 0px 1px var(--shadow-skeumorphic-inner-border) inset,
+        0px -2px 0px 0px var(--shadow-skeumorphic-inner) inset,
+        0px 1px 2px 0px var(--Colors-Effects-Shadows-shadow-xs);
+      transform: rotate(180deg);
+      &-expanded {
+        transform: (rotate(0));
+      }
+    }
+  }
+}

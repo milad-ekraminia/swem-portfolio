@@ -1,0 +1,539 @@
+// half-donut chart
+@use '/src/assets/styles/mixins' as *;
+
+.custom-tooltip {
+  background: #101828;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.apexcharts-legend {
+  width: 100%;
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+  .apexcharts-legend-series {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+}
+.chart-header {
+  width: 100%;
+  @include flex-center(space-between, center);
+  padding: var(--spacing-xl);
+  border-bottom: 1px solid var(--border-secondary);
+  &__title {
+    @include text-style(text-secondary-700, text-md, 600, text-md);
+  }
+}
+.chart-content {
+  width: 100%;
+}
+.apex-tooltip-custom {
+  @include flex-center(flex-start, flex-start);
+  flex-direction: column;
+  padding: var(--spacing-lg);
+  gap: 10px;
+  @include text-style(text-quaternary-500, text-xs, 400, text-xs);
+  width: 246px;
+  &__header {
+    @include flex-center(flex-start, center);
+    gap: var(--spacing-xs);
+    width: 100%;
+  }
+  &__row {
+    @include flex-center(space-between, center);
+    width: 100%;
+  }
+}
+.chart-container-no-data {
+  width: 100%;
+  height: 400px;
+  margin: 0 auto;
+  @include flex-center(center, center);
+  flex-direction: column;
+  background-color: var(--bg-primary);
+
+  @include flex-center(space-between, center);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
+  &__image {
+    padding: var(--spacing-lg);
+    width: 820px;
+  }
+  &__body {
+    width: 520px;
+    text-align: center;
+    @include text-style(text-quaternary-500, text-md, 400, text-md);
+  }
+}
+.custom-legend-container {
+  padding: var(--spacing-xl);
+  width: 100%;
+  & > div {
+    width: 100%;
+    background: var(--bg-primary-hover);
+    @include flex-center(space-between, center);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-secondary);
+    padding: var(--spacing-xl);
+    .custom-legend {
+      width: 100%;
+      @include flex-center(flex-start, center);
+      gap: var(--spacing-3xl);
+      align-items: flex-start;
+      align-self: stretch;
+
+      @include respond-to('lg') {
+        flex-wrap: wrap;
+        gap: var(--spacing-xl);
+      }
+
+      &__item {
+        @include flex-center(flex-start, center);
+        gap: var(--spacing-md);
+        cursor: pointer;
+        &-disabled {
+          @include text-style(text-placeholder-subtle, text-xs, 400, text-xs);
+          .custom-legend__item-status {
+            background-color: var(--text-placeholder-subtle) !important;
+          }
+          .custom-legend__item-title-toggler {
+            @include text-style(text-placeholder-subtle, text-xs, 400, text-xs);
+          }
+        }
+        &-status {
+          @include flex-center(center, center);
+          width: 16px;
+          height: 16px;
+          padding: 2px;
+          flex-shrink: 0;
+          border-radius: 100%;
+        }
+        &-title-toggler {
+          background-color: unset;
+          @include text-style(text-quaternary-500, text-xs, 400, text-xs);
+        }
+      }
+      &__actions {
+        width: 150px;
+        @include flex-center(flex-end, center);
+        .dropdown-container {
+          & > button {
+            width: 100%;
+            & span {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.column-chart-container {
+  width: 100%;
+  @include flex-center(flex-start, flex-start);
+  flex-direction: column;
+  gap: 20px;
+  padding: var(--spacing-xl) 0;
+  height: 100%;
+}
+.line-chart-container {
+  width: 100%;
+  @include flex-center(flex-start, flex-start);
+  flex-direction: column;
+  gap: 20px;
+  padding: var(--spacing-xl) 0;
+  height: 100%;
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  .apex-tooltip-custom-line-container {
+    @include flex-center(flex-start, flex-start);
+    flex-direction: column;
+    padding: var(--spacing-lg);
+    gap: 10px;
+    @include text-style(text-quaternary-500, text-xs, 400, text-xs);
+    &-header {
+      @include flex-center(flex-start, flex-start);
+      gap: 10px;
+    }
+    .apex-tooltip-custom-line {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 5px;
+      font-size: 12px;
+    }
+  }
+  .dropdown-content {
+    max-width: 200px !important;
+    min-width: 150px !important;
+    padding: 0 !important;
+    .dropdown-body {
+      .custom-legend-drop-down {
+        @include flex-center(flex-start, flex-start);
+        flex-direction: column;
+        gap: var(--spacing-xl);
+        width: 100%;
+        padding: var(--spacing-lg);
+
+        &__show-all {
+          width: 100%;
+          @include flex-center(flex-start, center);
+          gap: var(--spacing-md);
+        }
+        &__items {
+          @include flex-center(flex-start, flex-start);
+          flex-direction: column;
+          gap: 6px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.heatmap-chart-container {
+  width: 100%;
+  @include flex-center(flex-start, flex-start);
+  flex-direction: column;
+  gap: 20px;
+  padding: var(--spacing-xl) 0;
+  height: 100%;
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-lg);
+}
+
+.heatmap-color-slider {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 12px;
+  color: #666;
+  width: 100%;
+  max-width: 90%;
+  margin: auto;
+
+  .scale-label {
+    white-space: nowrap;
+  }
+
+  .slider-container {
+    position: relative;
+    flex: 1;
+    height: 16px;
+    margin: 0 12px;
+
+    .scale-bar {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 8px;
+      width: 100%;
+      border-radius: 4px;
+      background: linear-gradient(
+        to right,
+        #0d870d,
+        #ddeba6,
+        #ffe677,
+        #ffaa0d,
+        #ff2e0d
+      );
+    }
+
+    .slider-thumb {
+      position: absolute;
+      top: 1px;
+      width: 24px;
+      height: 24px;
+      // background: white;
+      // border: 1px solid #ccc;
+      // border-radius: 50%;
+      cursor: grab;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.left {
+        transform: translateX(-50%);
+      }
+
+      &.right {
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+.chart-toolbar {
+  padding: 12px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 246px;
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    @include text-style(text-quaternary-500, text-xs, 400, text-xs);
+  }
+
+  &-legend {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 8px;
+  }
+
+  &-legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    justify-content: space-between;
+    gap: 4px;
+    width: 100%;
+
+    &__title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    &__color {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    &__title {
+      font-weight: 400;
+      color: var(--text-quaternary-500);
+    }
+
+    &__value {
+      font-weight: 500;
+      color: var(--text-quaternary-500);
+    }
+  }
+
+  &-column {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+.heatmap-tooltip {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  padding: var(--spacing-lg);
+  width: 191px;
+  &__header {
+    @include flex-center(flex-start, center);
+    gap: var(--spacing-xs);
+    @include text-style(text-quaternary-500, text-xs, 400, text-xs);
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: space-between;
+    width: 100%;
+
+    &-title {
+      @include text-style(text-quaternary-500, text-xs, 400, text-xs);
+    }
+    &-value {
+      @include text-style(text-quaternary-500, text-xs, 400, text-xs);
+    }
+  }
+}
+
+.dv-echart-style {
+  .tooltip-wrapper {
+    font-family: sans-serif;
+    font-size: 12px;
+  }
+  .tooltip-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  .tooltip-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .tooltip-col {
+    flex: 1;
+    flex-shrink: 1;
+    min-width: fit-content;
+  }
+  .tooltip-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .tooltip-dot {
+    width: 10px;
+    min-width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .tooltip-label {
+    flex: 1;
+  }
+  .tooltip-value {
+    font-weight: bold;
+  }
+}
+
+.dount-chart {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    height: 100%;
+    padding: var(--spacing-3xl);
+    border-radius: var(--radius-lg);
+    background: var(--bg-secondary-alt);
+    .title {
+      @include text-style(text-secondary-700, text-md, 600, text-md);
+      font-size: 16px;
+      width: 100%;
+      white-space: nowrap;
+    }
+
+    .chart-wrapper-container {
+      @include flex-center(flex-start, center);
+      gap: var(--spacing-md);
+      height: 100%;
+
+      @media (max-width: 1450px) {
+        flex-direction: column;
+      }
+
+      .chart {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chart-header {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .info {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @media (max-width: 1450px) {
+          order: 1;
+          flex-direction: row;
+        }
+
+        .title {
+          color: var(--text-secondary-700);
+        }
+      }
+      .chart-wrapper {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      .donut-chart__legends {
+        width: 100%;
+        color: var(--text-secondary-700);
+        .donut-chart__legends__item {
+          display: flex;
+          gap: var(--spacing-lg);
+          .marker {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            .custom-legend-marker {
+              display: flex;
+              width: 35px;
+              height: 12px;
+              border-radius: var(--radius-lg);
+            }
+          }
+          .custom-legend-label {
+            font-size: 16px;
+            font-weight: 500;
+          }
+          .custom-legend-value {
+            font-size: 16px;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .status-items {
+        @include flex-center(flex-start, flex-start);
+        flex-direction: column;
+        @media (max-width: 1450px) {
+          flex-direction: row;
+        }
+        gap: var(--spacing-3xl);
+
+        & > div {
+          gap: var(--spacing-sm);
+          @include flex-center(flex-start, center);
+          @include text-style(text-secondary-700, text-sm, 500, text-sm);
+          // font-size: var(--font-size-text-sm);
+          // font-weight: 500;
+          // color : var(--text-secondary-700)
+
+          .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: var(--radius-full);
+          }
+
+          &.active {
+            color: var(--utility-success-700);
+
+            & > .dot {
+             background: var(--utility-success-500);
+            }
+          }
+
+          &.warning {
+            color: var(--utility-warning-700);
+
+            & > .dot {
+              background: var(--utility-warning-500);
+            }
+          }
+
+          &.orange {
+           color: var(--utility-orange-700);
+
+            & > .dot {
+              background: var(--utility-orange-500);
+            }
+          }
+
+          &.danger {
+            color: var(--utility-error-700);
+
+            & > .dot {
+              background: var(--utility-error-500);
+            }
+          }
+        }
+      }
+    }
+  }
+}

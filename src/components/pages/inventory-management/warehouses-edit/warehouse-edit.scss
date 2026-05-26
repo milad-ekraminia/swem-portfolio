@@ -1,0 +1,105 @@
+@use '/src/assets/styles/mixins' as *;
+
+.warehouse {
+  &-edit {
+    width: 100%;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+
+    &-form-content {
+      @include flex-center(flex-start, flex-start);
+      flex-direction: column;
+      width: 100%;
+      padding: var(--spacing-xl) var(--spacing-3xl);
+      gap: var(--spacing-6xl);
+      max-height: 580px;
+      overflow: hidden;
+      overflow-y: auto;
+    }
+
+    &-information-level {
+      @include flex-center(flex-start, center);
+      background: var(--bg-secondary-alt);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl) var(--spacing-3xl);
+      width: 100%;
+      gap: 24px;
+    }
+    &-records-table {
+      @include flex-center(flex-start, center);
+      background: var(--bg-secondary-alt);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      gap: 24px;
+      border: 1px solid var(--border-secondary, #e4e7ec);
+
+      /* Shadows/shadow-xs-skeuomorphic */
+      box-shadow:
+        2px 2px 2px 2px var(--shadow-skeumorphic-inner-border) inset,
+        2px -2px 1px 2px var(--shadow-skeumorphic-inner) inset,
+        2px 1px 2px 2px var(--Colors-Effects-Shadows-shadow-xs);
+    }
+    .transfer-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 21px;
+      width: 21px;
+      min-width: 18px;
+      border-radius: 50%;
+
+      &.input {
+        border: 1px solid #22c55e85;
+        background-color: #22c55e28;
+
+        .indicator-dot {
+          height: 11px;
+          width: 11px;
+          padding: 2px;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          border: 2px solid #287e477a;
+        }
+      }
+
+      &.output {
+        // Tailwind's pink-500
+        border: 1px solid #ec486b;
+        background-color: #ec486b2a;
+        .indicator-dot {
+          height: 11px;
+          width: 11px;
+          padding: 2px;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          border: 2px solid #ec486b;
+        }
+      }
+    }
+    .transfer-description {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+    .dv-submit-or-cancel-buttons.fit-content {
+      display: flex;
+      justify-self: end;
+      justify-content: end;
+      .custom-button {
+        min-width: 158px;
+      }
+      div {
+        display: flex;
+        gap: var(--spacing-md);
+        width: fit-content;
+        justify-self: end;
+        align-self: end;
+      }
+    }
+    .delete-button-inner {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+  }
+}

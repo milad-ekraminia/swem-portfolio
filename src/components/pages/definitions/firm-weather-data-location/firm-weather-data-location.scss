@@ -1,0 +1,31 @@
+@use '/src/assets/styles/mixins' as *;
+
+.firm-weather-data-location-table-header {
+  width: 100%;
+  @include flex-center(space-between, center);
+  padding: var(--spacing-xl);
+  border-bottom: 1px solid var(--border-secondary);
+
+  & > span {
+    @include text-style(text-secondary-700, text-md, 600, text-md);
+  }
+
+  .actions {
+    @include flex-center(flex-end, center);
+    gap: var(--spacing-xl);
+
+    & > .custom-button-primary {
+      .label {
+        @include text-style(button-primary-fg, text-sm, 600, text-sm);
+        white-space: nowrap;
+      }
+    }
+
+    & .dropdown-container {
+      .custom-button {
+        border: 1px solid var(--button-secondary-color-border);
+        color: var(--button-secondary-color-fg);
+      }
+    }
+  }
+}

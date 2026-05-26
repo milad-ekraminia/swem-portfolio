@@ -1,0 +1,131 @@
+@use '/src/assets/styles/mixins' as *;
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  @include respond-to('xl') {
+    overflow: auto;
+  }
+}
+
+.dv-login {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include respond-to('xl') {
+    grid-template-columns: 1fr;
+  }
+
+  &__image-section {
+    padding: var(--spacing-3xl);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    @include respond-to('xl') {
+      display: none;
+    }
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius-5xl);
+      display: block;
+    }
+    &__image-logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__content-section {
+    height: 100%;
+    width: 100%;
+    background: url(/images/login-mask.webp);
+    background-size: cover;
+    @include flex-center(space-between, center);
+    flex-direction: column;
+    gap: var(--spacing-3xl);
+    padding: var(--spacing-8xl) var(--spacing-5xl) var(--spacing-3xl)
+      var(--spacing-5xl);
+
+    @include respond-to('xl') {
+      gap: 25px;
+    }
+
+    &__content {
+      width: 100%;
+      @include flex-center(space-between, center);
+      flex-direction: column;
+      gap: 65px;
+
+      @include respond-to('xl') {
+        gap: 50px;
+      }
+
+      &__image-logo {
+        object-fit: contain;
+        width: 118px;
+        height: 127px;
+      }
+
+      &__form {
+        @include flex-center(flex-start, center);
+        margin: 0 auto;
+        max-width: 360px;
+        max-height: 600px;
+        flex-direction: column;
+        gap: var(--spacing-4xl);
+        align-self: stretch;
+
+        &__title {
+          @include text-style(
+            text-brand-secondary-700,
+            display-md,
+            600,
+            display-md
+          );
+          text-align: center;
+          font-style: normal;
+          letter-spacing: 1.44px;
+        }
+
+        &__box {
+          width: 100%;
+          @include flex-center(flex-start, flex-start);
+          flex-direction: column;
+          gap: var(--spacing-2xl);
+
+          button {
+            width: 100%;
+            margin-top: var(--spacing-lg);
+          }
+        }
+      }
+    }
+
+    &__copyright {
+      @include flex-center(space-between, center);
+      width: 100%;
+      // padding-bottom: var(--spacing-4xl);
+      @include text-style(text-tertiary-600, text-sm, 400, text-sm);
+
+      &__contact {
+        @include flex-center(flex-start, center);
+        gap: var(--spacing-xxs);
+
+        a {
+          @include text-style(text-tertiary-600, text-sm, 400, text-sm);
+        }
+      }
+    }
+  }
+}

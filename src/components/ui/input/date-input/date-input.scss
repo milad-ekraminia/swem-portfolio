@@ -1,0 +1,91 @@
+@use '/src/assets/styles/mixins' as *;
+
+.date-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  &__label {
+    width: 100%;
+    text-align: start;
+    @include text-style(text-secondary-700, text-sm, 500, text-sm);
+  }
+  .custom-date-input {
+    position: relative;
+    input {
+      width: 100%;
+      height: 40px;
+      padding: 10px var(--spacing-md) 10px var(--spacing-4xl);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-primary);
+      color: var(--text-tertiary-600);
+      @include text-style(text-secondary-700, text-md, 400, text-md);
+      &::placeholder {
+        @include text-style(text-placeholder, text-md, 400, text-md);
+      }
+    }
+    input.error {
+      border: 1px solid #dc3545;
+    }
+    svg {
+      position: absolute;
+      left: 8px;
+      top: 9px;
+    }
+  }
+}
+.calender {
+  border: none !important;
+  box-shadow: none !important;
+}
+.date-picker-modal {
+  @include flex-center(flex-start, flex-start);
+  &__shortcuts {
+    @include flex-center(flex-start, flex-start);
+    flex-direction: column;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    gap: var(--spacing-xs);
+    height: 100%;
+    &-title {
+      padding: var(--spacing-md) var(--spacing-xl);
+      @include text-style(text-secondary-700, text-md, 600, text-md);
+    }
+    &-list {
+      @include flex-center(flex-start, flex-start);
+      flex-direction: column;
+      gap: var(--spacing-xs);
+      &-item {
+        padding: var(--spacing-md) var(--spacing-xl);
+        @include text-style(text-secondary-hover, text-sm, 500, text-sm);
+        button {
+          background: unset;
+        }
+      }
+    }
+  }
+  &__datePicker {
+    @include flex-center(space-between, flex-start);
+    flex-direction: column;
+    border-left: 1px solid var(--border-secondary);
+
+    .select {
+      padding: var(--spacing-xl);
+      padding-bottom: var(--spacing-lg);
+      width: 100%;
+      .select-input__dropdown {
+        height: 165px;
+      }
+    }
+    .date-picker {
+      padding: var(--spacing-lg) var(--spacing-3xl);
+    }
+    .actions {
+      width: 100%;
+      @include flex-center(space-between, flex-start);
+      padding: var(--spacing-xl);
+      gap: var(--spacing-lg);
+      .custom-button {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@use '/src/assets/styles/mixins' as *;
+
+[dir='rtl'] .layout {
+  &__content {
+    margin-right: 80px;
+    margin-left: 0;
+    &-expanded {
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@use '/src/assets/styles/mixins' as *;
+.organization-input {
+  .input {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .input.empty {
+    color: var(--text-placeholder);
+  }
+}

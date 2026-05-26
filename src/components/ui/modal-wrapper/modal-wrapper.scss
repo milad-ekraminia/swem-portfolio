@@ -1,0 +1,113 @@
+@use '/src/assets/styles/mixins' as *;
+
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--base-white);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1006;
+  max-width: 460px;
+  width: 100%;
+  &-xs {
+    max-width: 380px;
+  }
+  &-md {
+    max-width: 820px;
+  }
+  &-lg {
+    max-width: 1048px;
+    max-height: 90%;
+  }
+  &-full {
+    height: 100%;
+    max-width: 1460px;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: var(--font-size-display-xs);
+  cursor: pointer;
+}
+.modal-outside-click {
+  position: fixed;
+  inset: 0px;
+  z-index: 1005;
+  background-color: #0c111d9d;
+  opacity: 0.6;
+  backdrop-filter: blur(20px);
+}
+
+.global-modal {
+  @include flex-center(flex-start, flex-start);
+  flex-direction: column;
+  max-height: calc(100vh - 100px);
+
+  &__header {
+    width: 100%;
+    @include flex-center(space-between, center);
+    padding: var(--spacing-3xl);
+    gap: var(--spacing-xl);
+    align-self: stretch;
+    border-bottom: 1px solid var(--border-secondary);
+
+    & > button {
+      background: unset;
+    }
+
+    & > div {
+      @include flex-center(flex-start, center);
+      gap: var(--spacing-xl);
+    }
+
+    &-icon {
+      border-radius: var(--radius-full);
+      background: var(--bg-brand-secondary);
+      @include flex-center(center, center);
+      width: 48px;
+      height: 48px;
+      padding: 12px;
+    }
+
+    &-title {
+      @include text-style(text-primary-900, text-lg, 600, text-lg);
+    }
+  }
+
+  &__content {
+    padding: var(--spacing-xl) var(--spacing-3xl);
+    width: 100%;
+  }
+
+  &__footer {
+    padding: var(--spacing-3xl);
+    @include flex-center(center, center);
+    border-top: 1px solid var(--border-secondary);
+    width: 100%;
+    gap: var(--spacing-lg);
+
+    .custom-button {
+      width: 100%;
+    }
+  }
+}
+
+// Apply styles to select-input__dropdown only when modal-outside-click exists in document
+.select-input__dropdown {
+  z-index: 998;
+}
+
+body:has(.modal-outside-click) .select-input__dropdown {
+  z-index: 1007;
+}
+
+.sidebar {
+  z-index: 999;
+}

@@ -1,0 +1,45 @@
+// RTL-specific styles for added time periods table
+[dir='rtl'] {
+  .added-times-table {
+    &__header {
+      &-body {
+        &-groups {
+          &-group {
+            border-right: none;
+            border-left: solid 1px var(--border-secondary);
+          }
+        }
+        &-group {
+          border-right: none;
+          border-left: solid 1px var(--border-secondary);
+        }
+        &-group:last-of-type {
+          border-left: none !important;
+        }
+        // Add border to the action column in header
+        &-group.action {
+          border-right: solid 1px var(--border-secondary);
+        }
+      }
+    }
+
+    &__body {
+      &-group {
+        &-column {
+          border-right: none;
+          border-left: solid 1px var(--border-secondary);
+        }
+        &-column.action {
+          border-right: solid 1px var(--border-secondary);
+        }
+        &-section {
+          &-column {
+            border-right: none;
+            border-left: solid 1px var(--border-secondary);
+          }
+        }
+      }
+    }
+  }
+}
+

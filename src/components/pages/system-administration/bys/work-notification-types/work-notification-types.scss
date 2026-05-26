@@ -1,0 +1,19 @@
+@use '/src/assets/styles/mixins' as *;
+
+.bys-work-notifications {
+}
+.work-notification {
+  &-types-modal {
+    width: 100%;
+  }
+  &-form-content {
+    @include flex-center(flex-start, flex-start);
+    flex-direction: column;
+    width: 100%;
+    padding: var(--spacing-xl) var(--spacing-3xl);
+    gap: var(--spacing-6xl);
+    max-height: 500px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+}

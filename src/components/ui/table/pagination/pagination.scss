@@ -1,0 +1,109 @@
+/* General pagination container */
+@use '/src/assets/styles/mixins' as *;
+.pagination-container {
+  position: sticky;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl) var(--spacing-3xl) var(--spacing-lg)
+    var(--spacing-3xl);
+
+  .pagination-wrapper {
+    grid-column: span 11;
+    @include flex-center(space-between, flex-start);
+    width: 100%;
+    .page-numbers {
+      @include flex-center(flex-start, center);
+      gap: var(--spacing-lg);
+      background-color: var(--base-white);
+      .page-numbers-wrapper {
+        @include flex-center(flex-start, center);
+        gap: var(--spacing-xxs);
+        background-color: var(--base-white);
+      }
+      .icon-wrappers {
+        @include flex-center(flex-start, center);
+        gap: var(--spacing-lg);
+      }
+      .page-number {
+        @include flex-center(center, center);
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        background-color: inherit;
+        padding: var(--space-1) var(--space-3);
+        transition:
+          background-color 0.2s ease,
+          color 0.2s ease;
+        border-radius: var(--radius-md);
+        @include text-style(text-tertiary-600, text-sm, 500, text-sm);
+
+        &-input {
+          width: 40px;
+          height: 40px;
+          padding: 4px;
+          text-align: center;
+          border: 1px solid #ccc;
+          border-radius: var(--radius-md);
+        }
+
+        &.active {
+          background: var(--bg-brand-primary-alt);
+          // background: var(--bg-primary-hover);
+          @include text-style(text-brand-secondary-700, text-sm, 500, text-sm);
+        }
+        &.hover {
+          &:hover {
+            background-color: var(--bg-primary-hover);
+          }
+        }
+      }
+
+      .arrow-btns {
+        @include flex-center(center, center);
+        padding: 0 var(--spacing-md);
+      }
+    }
+  }
+  .row-select-box {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    .records {
+      @include text-style(text-tertiary-600, text-sm, 400, text-sm);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+    }
+    .row-select-label {
+      font-size: 14px;
+      color: #333;
+    }
+    .select-input {
+      width: 93px;
+      &__select {
+        width: 100%;
+      }
+
+      .row-select-dropdown {
+        width: 150px;
+        padding: var(--space-1) var(--space-2);
+        @include border-style(#ccc, var(--radius-xs));
+        font-size: var(--font-size-text-sm);
+      }
+    }
+  }
+  &-minified-pagination {
+    @include flex-center(space-between, center);
+    flex-direction: row-reverse;
+    .pagination-wrapper {
+      @include flex-center(flex-end, center);
+      gap: var(--spacing-md);
+      .page-numbers {
+        @include text-style(fg-secondary-700, text-sm, 400, text-sm);
+      }
+    }
+  }
+}

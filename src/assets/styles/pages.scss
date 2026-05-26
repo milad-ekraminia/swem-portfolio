@@ -1,0 +1,154 @@
+// layout
+@use '../../components/layouts/footer/footer.scss';
+@use '../../components/layouts/page-layout/main-layout.scss';
+@use '../../components/layouts/page-layout/rtl-main-layout.scss';
+@use '../../components/layouts/page-layout/organization-trace-header/organization-trace-header.scss';
+@use '../../components/layouts/page-layout/dashboard-header/dashboard-header.scss';
+@use '../../components/layouts/page-layout/pages-header/pages-header.scss';
+@use '../../components/layouts/sidebar/sidebar.scss';
+@use '../../components/layouts/sidebar/rtl-sidebar.scss';
+// components
+@use '../../components/ui/accordion/accordion.scss';
+@use '../../components/ui/action/action.scss';
+@use '../../components/ui/badge/badge.scss';
+@use '../../components/ui/alarm-level-badge/alarm-level-badge.scss';
+@use '../../components/ui/bread-crumb/bread-crumb.scss';
+@use '../../components/ui/button/button.scss';
+@use '../../components/ui/button/rtl-button.scss';
+@use '../../components/ui/cards/card.scss';
+@use '../../components/ui/cards/rtl-card.scss';
+@use '../../components/ui/cards/cards-wrapper/cards-wrapper.scss';
+@use '../../components/ui/charts/charts.scss';
+@use '../../components/ui/drawer/drawer.scss';
+@use '../../components/ui/dropdown/dropdown-wrapper/drop-down-wrapper.scss';
+@use '../../components/ui/dropdown/portal-dropdown-wrapper/portal-dropdown-wrapper.scss';
+@use '../../components/ui/error-content/error-content.scss';
+@use '../../components/ui/img-slider/img-slider.scss';
+@use '../../components/ui/import-excel/import-excel.scss';
+@use '../../components/ui/input/input.scss';
+@use '../../components/ui/input/rtl-input.scss';
+@use '../../components/ui/input/check-box/check-box.scss';
+@use '../../components/ui/input/date-input/date-input.scss';
+@use '../../components/ui/input/date-input/year-date-input/year-date-input.scss';
+@use '../../components/ui/input/date-input/year-date-input/rtl-year-date-input.scss';
+@use '../../components/ui/input/file-preview/file-preview.scss';
+@use '../../components/ui/input/multi-select-input/multi-select-input.scss';
+@use '../../components/ui/input/organization-picker/organization-input.scss';
+@use '../../components/ui/input/organization-picker/organization-tree.scss';
+@use '../../components/ui/input/organization-picker/rtl-organization-tree.scss';
+@use '../../components/ui/input/register-toggler/register-toggler.scss';
+@use '../../components/ui/input/register-input-with-button/register-input-with-button.scss';
+@use '../../components/ui/input/register-select-input-with-button/rtl-register-select-input-with-button.scss';
+@use '../../components/ui/input/register-select-input-with-button/register-select-input-with-button.scss';
+@use '../../components/ui/input/search-input/search-input.scss';
+@use '../../components/ui/input/searchable-select/searchable-select.scss';
+@use '../../components/ui/input/searchable-select/rtl-searchable-select.scss';
+@use '../../components/ui/input/select-input-action/select-input-action.scss';
+@use '../../components/ui/input/select-input-with-portal/select-input-with-portal.scss';
+@use '../../components/ui/input/select-input/select-input.scss';
+@use '../../components/ui/input/select-input/rtl-select-input.scss';
+@use '../../components/ui/input/textarea/textarea.scss';
+@use '../../components/ui/input/textarea-scrollable/textarea-scrollable.scss';
+@use '../../components/ui/input/toggle-button/toggle.scss';
+@use '../../components/ui/input/typed-select-input/typed-select-input.scss';
+@use '../../components/ui/input/upload-file/upload-file-input.scss';
+@use '../../components/ui/common-container-with-header/common-container-with-header.scss';
+
+@use '../../components/ui/loader/loader.scss';
+@use '../../components/ui/loader/component-loader/component-loader.scss';
+@use '../../components/ui/modal-wrapper/modal-wrapper.scss';
+@use '../../components/ui/modal-wrapper/rtl-modal-wrapper.scss';
+@use '../../components/ui/notification/notification-modal/notification-modal.scss';
+@use '../../components/ui/progress-bar/progress-bar.scss';
+@use '../../components/ui/skeleton/skeleton-loader.scss';
+@use '../../components/ui/status-icon/status-icon.scss';
+@use '../../components/ui/status-tag-circle.tsx/status-tag-circle.scss';
+@use '../../components/ui/status-tag/status-tag.scss';
+@use '../../components/ui/table/table.scss';
+@use '../../components/ui/table/pagination/pagination.scss';
+@use '../../components/ui/table-box/table-box.scss';
+@use '../../components/ui/table-with-form/table-with-form.scss';
+@use '../../components/ui/tabs/tabs.scss';
+@use '../../components/ui/textarea-box/textarea-box-table.scss';
+@use '../../components/ui/toast/toast.scss';
+@use '../../components/ui/user-avatar/user-avatar.scss';
+@use '../../components/ui/user-avatar/rtl-user-avatar.scss';
+
+//login
+@use '../../components/pages/login/login.scss';
+
+//organization-trace
+@use '../../components/pages/organization-trace/organization-trace.scss';
+@use '../../components/pages/organization-trace/rtl-organization-trace.scss';
+@use '../../components/pages/organization-trace/alarms/alarms-page-content.scss';
+@use '../../components/pages/organization-trace/dashboard/dashboard.scss';
+@use '../../components/pages/organization-trace/dashboard/alarm-details-modal.scss';
+@use '../../components/pages/organization-trace/dashboard/rtl-dashboard.scss';
+@use '../../components/pages/organization-trace/graphic/graphic.scss';
+@use '../../components/pages/svg/map-graph.scss';
+@use '../../components/pages/svg/rtl-map-graph.scss';
+@use '../../components/pages/organization-trace/device-trend-analysis/device-trend-analysis.scss';
+
+// bys
+@use '../../components/pages/bys/asset-tree/asset-tree.scss';
+@use '../../components/pages/bys/asset-tree/rtl-asset-tree.scss';
+@use '../../components/pages/bys/plants/plants-edit.scss';
+@use '../../components/pages/bys/plants/plants.scss';
+@use '../../components/pages/bys/work-notification/work-notification.scss';
+@use '../../components/pages/bys/work-orders-edit/work-orders-edit.scss';
+@use '../../components/pages/bys/work-orders/work-orders.scss';
+// definitions
+@use '../../components/pages/definitions/access-points/access-points.scss';
+@use '../../components/pages/definitions/alarm-configurations/alarm-configurations.scss';
+@use '../../components/pages/definitions/alarm-configurations/rtl-alarm-configurations.scss';
+@use '../../components/pages/definitions/device-model-modbus-info/devices-model-modbus-info.scss';
+@use '../../components/pages/definitions/device-models/device-models.scss';
+@use '../../components/pages/definitions/devices/devices.scss';
+@use '../../components/pages/definitions/devices/rtl-devices.scss';
+@use '../../components/pages/definitions/firm-weather-data-location/firm-weather-data-location.scss';
+@use '../../components/pages/definitions/multi-conditional-status/multi-conditional-status.scss';
+@use '../../components/pages/definitions/organizations/organizations.scss';
+@use '../../components/pages/definitions/organizations/rtl-organizations.scss';
+@use '../../components/pages/definitions/time-periods/period-detail-tables/added-time-periods-table.scss';
+@use '../../components/pages/definitions/time-periods/period-detail-tables/rtl-added-time-periods-table.scss';
+@use '../../components/pages/definitions/time-periods/period-detail-tables/time-selection-table.scss';
+@use '../../components/pages/definitions/time-periods/period-detail-tables/rtl-time-selection-table.scss';
+
+//errors
+@use '../../components/pages/error/error-page.scss';
+@use '../../components/pages/error/error-group-buttons/error-group-button.scss';
+
+//inventory-management
+@use '../../components/pages/inventory-management/inventories/inventories.scss';
+@use '../../components/pages/inventory-management/product/products.scss';
+@use '../../components/pages/inventory-management/warehouses-edit/warehouse-edit.scss';
+@use '../../components/pages/inventory-management/warehouses-edit/rtl-warehouse-edit.scss';
+@use '../../components/pages/inventory-management/warehouses-stock-change/stock-changes.scss';
+@use '../../components/pages/inventory-management/warehouses/warehouses.scss';
+@use '../../components/pages/inventory-management/warehouses/rtl-warehouses.scss';
+
+//reports
+@use '../../components/pages/reports/consumption/consumption-report.scss';
+@use '../../components/pages/reports/reports.scss';
+@use '../../components/pages/reports/shared/report-results.scss';
+@use '../../components/pages/reports/tag-reports/tag-reports.scss';
+
+//system-administration
+@use '../../components/pages/system-administration/bys/labels/labels.scss';
+@use '../../components/pages/system-administration/bys/work-notification-types/work-notification-types.scss';
+@use '../../components/pages/system-administration/bys/work-order-actions/work-order-action-types.scss';
+@use '../../components/pages/system-administration/bys/work-order-cost-types/work-order-cost-types.scss';
+@use '../../components/pages/system-administration/bys/work-order-types/work-order-types.scss';
+@use '../../components/pages/system-administration/definitions/derived-values/derived-values.scss';
+@use '../../components/pages/system-administration/definitions/device-categories/device-categories.scss';
+@use '../../components/pages/system-administration/definitions/formulas/formulas.scss';
+@use '../../components/pages/system-administration/definitions/mimic-elements/mimic-element.scss';
+@use '../../components/pages/system-administration/definitions/mimic-elements/related-elements/related-elements.scss';
+@use '../../components/pages/system-administration/definitions/user-organization-profiles/user-organization-profiles.scss';
+@use '../../components/pages/system-administration/definitions/users/users.scss';
+@use '../../components/pages/system-administration/security-logs/security-logs.scss';
+@use '../../components/pages/system-administration/definitions/audit-logs/audit-logs.scss';
+@use '../../components/pages/system-administration/definitions/roles/roles.scss';
+
+//software-versions
+@use '../../components/pages/software-versions/software-versions.scss';

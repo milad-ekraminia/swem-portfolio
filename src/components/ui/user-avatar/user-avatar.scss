@@ -1,0 +1,68 @@
+@use '/src/assets/styles/mixins' as *;
+
+.user-profile {
+  @include flex-center(flex-start, center);
+  gap: var(--spacing-xs);
+  // transition: width 1s;
+  width: var(--spacing-6xl);
+  background-color: var(--base-white);
+  transition: all 0.2s linear;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+
+  &:hover {
+    background-color: #e8e8e8;
+  }
+
+  &-expanded {
+    width: 100%;
+  }
+
+  img {
+    max-width: var(--spacing-6xl);
+    max-height: var(--spacing-6xl);
+    width: 100%;
+    border-radius: 50%;
+    // background: url("../../../assets/images/Avatar.png") white 50% / cover
+    //   no-repeat;
+    // border: none;
+  }
+
+  &__details {
+    @include flex-center(flex-start, flex-start);
+    flex-direction: column;
+    h4 {
+      @include text-style(text-secondary-700, text-sm, 600, text-sm);
+    }
+    p {
+      @include text-style(text-tertiary-600, text-sm, 500, text-sm);
+    }
+    visibility: hidden;
+    opacity: 0;
+    // transition:
+    //   opacity 0.5s ease,
+    //   visibility 0s 0.5s;
+
+    &-expanded {
+      visibility: visible;
+      opacity: 1;
+      transition: all 0.75s ease;
+    }
+  }
+
+  &__signout {
+    visibility: hidden;
+    opacity: 0;
+    // transition:
+    //   opacity 0.5s ease,
+    //   visibility 0s 0.5s;
+
+    &-expanded {
+      visibility: visible;
+      opacity: 1;
+      //   transition:
+      //     opacity 0.5s ease,
+      //     visibility 0s;
+    }
+  }
+}

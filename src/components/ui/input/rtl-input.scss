@@ -1,0 +1,62 @@
+@use '/src/assets/styles/mixins' as *;
+
+[dir='rtl'] .main-input {
+  &__wrapper {
+    .input {
+      // Swap padding for icons in RTL mode
+      &-with-left-icon {
+        padding-left: 14px; // Reset to default
+        padding-right: 2.5rem; // Increased padding to prevent text overlap with icon
+      }
+
+      &-with-right-icon {
+        padding-right: 14px; // Reset to default  
+        padding-left: 2.5rem; // Increased padding to prevent text overlap with icon
+      }
+
+      // When input has both icons (like password field with lock + eye icon)
+      &-with-left-icon.input-with-right-icon {
+        padding-left: 2.5rem; // Space for eye icon on left in RTL
+        padding-right: 2.5rem; // Space for lock icon on right in RTL
+      }
+    }
+
+    &.has-suffix > .input {
+      border-top-right-radius: var(--radius-md);
+      border-bottom-right-radius: var(--radius-md);
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+
+    &.has-suffix {
+      .select-input__select {
+        border-top-left-radius: var(--radius-md);
+        border-bottom-left-radius: var(--radius-md);
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-left: 1px solid var(--border-primary);
+        border-right: 0px;
+      }
+    }
+
+    .input-icon {
+      // Swap icon positions in RTL mode
+      &-left {
+        left: auto;
+        right: var(--space-2);
+      }
+
+      &-right {
+        right: auto;
+        left: var(--space-2);
+      }
+    }
+
+    .input-eye-icon {
+      // Move eye icon to left side in RTL
+      right: auto;
+      left: var(--space-3);
+    }
+  }
+}
+

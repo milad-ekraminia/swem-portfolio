@@ -1,0 +1,126 @@
+@use '/src/assets/styles/mixins' as *;
+
+.table-body {
+  & .cell-content .actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    & .detail {
+      color: var(--button-tertiary-color-fg);
+      font-size: var(--font-size-text-sm, 14px);
+      font-weight: 600;
+    }
+  }
+}
+
+.plants-list {
+  gap: 0 !important;
+
+  .table-header {
+    background: var(--bg-primary);
+    border: solid 1px var(--border-secondary);
+    border-top-left-radius: var(--radius-xl);
+    border-top-right-radius: var(--radius-xl);
+  }
+
+  .table-wrapper {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    width: 100%;
+    background: var(--bg-primary);
+    border-bottom-left-radius: var(--radius-xl);
+    border-bottom-right-radius: var(--radius-xl);
+  }
+
+  .box-view {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: var(--spacing-3xl);
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 16px var(--spacing-xl);
+    align-self: stretch;
+    background: var(--bg-primary);
+    border-bottom-left-radius: var(--radius-xl);
+    border-bottom-right-radius: var(--radius-xl);
+    border: 1px solid var(--border-secondary);
+    border-top: 0;
+
+    .plant-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-secondary);
+      background: var(--gray-light-50);
+
+      &__img {
+        display: flex;
+        padding: var(--spacing-xl);
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+
+        & > img {
+          height: 180px;
+          flex: 1 0 0;
+          border-radius: var(--radius-md);
+          border: 1px solid var(--border-secondary);
+        }
+      }
+
+      &__detail {
+        display: flex;
+        padding: var(--spacing-xl);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+        border-top: 1px solid var(--border-secondary);
+
+        &__name {
+          color: var(--text-secondary-700);
+          font-weight: 600;
+          font-size: var(--font-size-text-sm);
+        }
+
+        &__address {
+          color: var(--text-secondary-700);
+          font-weight: 500;
+          font-size: var(--font-size-text-sm);
+        }
+      }
+
+      &__actions {
+        display: flex;
+        padding: var(--spacing-md) var(--spacing-xl);
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        align-self: stretch;
+        border-top: 1px solid var(--border-secondary);
+
+        & button {
+          border: none;
+          background: none;
+
+          .inventories {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}

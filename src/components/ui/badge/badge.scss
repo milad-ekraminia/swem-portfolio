@@ -1,0 +1,58 @@
+@use '/src/assets/styles/mixins' as *;
+
+.badge {
+  align-items: center;
+  user-select: none;
+  display: flex;
+  padding: var(--spacing-xs) var(--spacing-md);
+  justify-content: center;
+  gap: 3px;
+  @include text-style(text-secondary-700, text-sm, 500, text-sm);
+  @include border-style(var(--border-primary), var(--radius-md));
+  &--gray {
+    background-color: #e2e8f0;
+    color: #1a202c;
+  }
+  &-white {
+    background-color: #fff !important;
+    color: #1a202c;
+  }
+  &--blue {
+    background-color: #bee3f8;
+    color: #2b6cb0;
+  }
+  &--green {
+    background-color: #c6f6d5;
+    color: #276749;
+  }
+  &--red {
+    background-color: #fed7d7;
+    color: #c53030;
+  }
+  &--yellow {
+    background-color: #fefcbf;
+    color: #975a16;
+  }
+
+  &.clickable {
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: flex;
+    padding: var(--spacing-xxs);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__remove {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 12px !important;
+    height: 12px !important;
+    color: inherit;
+  }
+}

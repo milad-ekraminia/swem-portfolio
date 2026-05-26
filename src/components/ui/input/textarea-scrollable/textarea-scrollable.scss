@@ -1,0 +1,70 @@
+@use '/src/assets/styles/mixins' as *;
+.textarea-container {
+  width: 100%;
+
+  .textarea-wrapper {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .textarea {
+    width: 100%;
+    font-size: 1rem;
+    padding: var(--spacing-lg) 40px var(--spacing-4xl) 14px !important;
+    flex: 1 0 0;
+    resize: none;
+    @include border-style(var(--border-primary), var(--radius-md));
+    @include text-style(text-secondary-700, text-md, 400, text-md);
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      @include text-style(text-placeholder, text-md, 400, text-md);
+    }
+  }
+
+  .textarea-scrollable {
+    overflow-y: auto;
+    min-height: 40px;
+    padding-right: 30px;
+    scrollbar-width: none; // hide scrollbar in Firefox
+    -ms-overflow-style: none; // hide scrollbar in IE/Edge
+
+    &::-webkit-scrollbar {
+      display: none; // hide scrollbar in Chrome/Safari
+    }
+  }
+
+  // Custom scroll buttons
+  .scroll-buttons {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    border-left: 1px solid var(--border-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    .buttons-divider {
+      width: 12px;
+      border: 1px solid var(--border-primary);
+    }
+
+    button {
+      border-radius: 4px;
+      padding: 2px 6px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      transition: all 0.2s ease;
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+}

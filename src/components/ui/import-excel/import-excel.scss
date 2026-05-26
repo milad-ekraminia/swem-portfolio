@@ -1,0 +1,9 @@
+@use '/src/assets/styles/mixins' as *;
+
+.dv-import-excel-modal-content {
+  @include flex-center(flex-start, center);
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl) var(--spacing-3xl);
+  width: 100%;
+}

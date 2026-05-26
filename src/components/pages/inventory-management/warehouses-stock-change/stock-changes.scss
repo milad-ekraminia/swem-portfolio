@@ -1,0 +1,111 @@
+@use '/src/assets/styles/mixins' as *;
+.warehouses {
+  .table-wrapper {
+    .export {
+      width: 100% !important;
+    }
+  }
+  &-table-header {
+    width: 100%;
+    @include flex-center(space-between, center);
+    padding: var(--spacing-xl);
+    border-bottom: 1px solid var(--border-secondary);
+
+    & > span {
+      @include text-style(text-secondary-700, text-md, 600, text-md);
+    }
+
+    .actions {
+      @include flex-center(flex-end, center);
+      gap: var(--spacing-xl);
+
+      & > .custom-button-primary {
+        .label {
+          @include text-style(button-primary-fg, text-sm, 600, text-sm);
+          white-space: nowrap;
+        }
+      }
+
+      & .dropdown-container {
+        .custom-button {
+          border: 1px solid var(--button-secondary-color-border);
+          color: var(--button-secondary-color-fg);
+        }
+      }
+    }
+    .custom-button-secondary-blue {
+      width: 100%;
+      white-space: nowrap;
+    }
+  }
+  .actions-link-column {
+    padding: 5px;
+  }
+
+  .change-view-style-btn {
+    white-space: nowrap;
+
+    @media (max-width: 1024px) {
+      // sm
+      .label {
+        display: hidden !important;
+        position: absolute;
+        opacity: 0;
+      }
+    }
+  }
+  .title-section {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+    gap: var(--spacing-lg);
+  }
+}
+.toggles-container {
+  @include flex-center(flex-start, center);
+  gap: var(--spacing-3xl);
+}
+
+.funnel-modal {
+  &-form-content {
+    @include flex-center(flex-start, flex-start);
+    flex-direction: column;
+    width: 100%;
+    padding: var(--spacing-xl) var(--spacing-3xl);
+    gap: var(--spacing-6xl);
+    max-height: 500px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  &-information-level {
+    @include flex-center(flex-start, flex-start);
+    width: 100%;
+    gap: 24px;
+  }
+}
+.actions-dropdown {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 9999;
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs);
+  color: var(--text-primary-900);
+  font-size: var(--font-size-sm);
+  button {
+    width: 100%;
+    text-align: start;
+    padding: var(--spacing-lg);
+
+    border-bottom: 1px solid var(--border-secondary);
+    &:last-child {
+      // styles for the last button
+      border-bottom: none;
+    }
+    &:hover {
+      background: #00000005;
+    }
+  }
+}

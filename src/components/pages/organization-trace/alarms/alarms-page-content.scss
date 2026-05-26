@@ -1,0 +1,26 @@
+@use '/src/assets/styles/mixins' as *;
+
+.alarms-page-content {
+  width: 100%;
+  &__top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-height: fit-content;
+    flex: 1 0 0;
+    gap: var(--spacing-4xl);
+    padding: var(--spacing-2xl) var(--spacing-xl);
+    align-self: stretch;
+    @include border-style(none, var(--radius-xl));
+    background-color: var(--bg-primary);
+    box-shadow: 0px 1px 2px 0px var(--shadow-xs);
+    &-form {
+      grid-column: span 2;
+      @include flex-center(center, center);
+      flex-direction: column;
+      gap: var(--spacing-2xl);
+    }
+    &-chart {
+      grid-column: span 1;
+    }
+  }
+}

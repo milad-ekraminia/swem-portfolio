@@ -1,0 +1,26 @@
+import { SvgProps } from '@/types/icons';
+
+export const WindSvg = ({
+  width = '16',
+  height = '16',
+  fill = 'none',
+  stroke = 'var(--brand-600)',
+}: SvgProps) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      viewBox="0 0 16 16"
+      fill={fill}
+    >
+      <path
+        d="M14 12.0002C14 12.0002 13.2064 11.6872 12.6667 11.5349C9.25314 10.5718 6.74686 13.4286 3.33333 12.4655C2.79361 12.3132 2 12.0002 2 12.0002M14 8.00016C14 8.00016 13.2064 7.68715 12.6667 7.53487C9.25314 6.57176 6.74686 9.42857 3.33333 8.46546C2.79361 8.31317 2 8.00016 2 8.00016M14 4.00016C14 4.00016 13.2064 3.68715 12.6667 3.53487C9.25314 2.57176 6.74686 5.42857 3.33333 4.46546C2.79361 4.31317 2 4.00016 2 4.00016"
+        stroke={stroke}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};

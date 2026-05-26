@@ -1,0 +1,44 @@
+@use '/src/assets/styles/mixins' as *;
+.textarea-container {
+  width: 100%;
+  label {
+    display: block;
+    margin-bottom: 0.375rem;
+    @include text-style(text-secondary-700, text-sm, 500, text-sm);
+  }
+  .textarea {
+    width: 100%;
+    font-size: 1rem;
+    @include flex-center(flex-start, flex-start);
+    padding: var(--spacing-lg) 14px var(--spacing-4xl) 14px;
+    gap: var(--spacing-md);
+    flex: 1 0 0;
+    align-self: stretch;
+    resize: none;
+    @include border-style(var(--border-primary), var(--radius-md));
+    @include text-style(text-secondary-700, text-md, 400, text-md);
+    &:focus {
+      outline: none;
+    }
+    ::placeholder {
+      @include text-style(text-placeholder, text-md, 400, text-md);
+    }
+  }
+  .textarea-error {
+    border-color: var(--border-error);
+  }
+  .placeholder-items {
+    width: 100%;
+    @include flex-center(flex-start, center);
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-lg);
+    .placeholder-item {
+      background: none;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--button-secondary-border);
+      @include text-style(button-secondary-fg, text-sm, 600, text-sm);
+      padding: var(--spacing-md) var(--spacing-lg);
+    }
+  }
+}

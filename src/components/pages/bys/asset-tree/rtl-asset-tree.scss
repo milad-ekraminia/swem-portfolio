@@ -1,0 +1,21 @@
+@use '/src/assets/styles/mixins' as *;
+
+[dir='rtl'] .asset-tree {
+  &__tree-container {
+    .tree-node {
+      &__item {
+        &::before,
+        &-body:before {
+          right: -29px;
+          left: auto;
+          border-left: 0;
+          border-radius: 0 0 0 4px;
+        }
+      }
+    }
+    .child-node-list {
+      margin-right: 2rem;
+      margin-left: 0;
+    }
+  }
+}

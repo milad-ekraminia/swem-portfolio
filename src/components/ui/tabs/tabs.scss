@@ -1,0 +1,60 @@
+@use '/src/assets/styles/mixins' as *;
+
+.tabs {
+  @include flex-center();
+  padding: var(--spacing-xs);
+  gap: var(--spacing-sm);
+  height: 46px;
+  max-height: 46px;
+  min-width: fit-content;
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  @include border-style(var(--border-secondary), var(--radius-lg));
+  flex-grow: 1;
+  &__item {
+    height: 38px;
+    width: 100%;
+
+    .tab-button {
+      @include flex-center(center, center);
+      @include text-style(gray-light-400, text-sm, 500, text-sm);
+      gap: var(--spacing-sm);
+      text-align: center;
+      width: 100%;
+      background-color: unset;
+      white-space: nowrap;
+      border: none;
+      transition:
+        background-color 0.2s,
+        color 0.2s;
+      outline: none;
+      display: flex;
+      padding: var(--spacing-md) var(--spacing-lg);
+      height: 38px;
+      &.active-tab {
+        font-weight: 600;
+        background-color: var(--bg-brand-primary-alt);
+        color: var(--text-brand-secondary-700);
+        @include border-style(var(--brand-400), var(--radius-sm));
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.disabled-tab {
+        opacity: 0.4 !important;
+        cursor: not-allowed !important;
+        pointer-events: none !important;
+        color: #9ca3af !important;
+        background-color: #f3f4f6 !important;
+        border: 1px solid #e5e7eb !important;
+
+        &:hover {
+          cursor: not-allowed !important;
+          background-color: #f3f4f6 !important;
+        }
+      }
+    }
+  }
+}

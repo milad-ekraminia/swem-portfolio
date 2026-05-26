@@ -1,0 +1,21 @@
+@use '/src/assets/styles/mixins' as *;
+
+[dir='rtl'] .select-input.with-button {
+  .inline-input-btn {
+    @include flex-center(center, center);
+    position: absolute;
+    left: 0;
+    right: auto;
+    border-right: 1px solid var(--border-primary);
+    @include text-style(text-brand-tertiary-600, text-md, 600, text-md);
+    gap: var(--spacing-sm);
+    min-width: 100px;
+    height: 40px;
+    border: 1px solid var(--border-primary);
+    background-color: white;
+    border-top-left-radius: var(--radius-md);
+    border-bottom-left-radius: var(--radius-md);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

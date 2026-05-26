@@ -1,0 +1,17 @@
+@use '/src/assets/styles/mixins' as *;
+
+.dv-search-box {
+  position: relative;
+
+  input {
+    padding-left: var(--spacing-4xl) !important;
+  }
+
+  &-icon {
+    position: absolute;
+    top: 50%;
+    left: var(--spacing-sm);
+    transform: translateY(-50%);
+    color: var(--text-secondary-500);
+  }
+}

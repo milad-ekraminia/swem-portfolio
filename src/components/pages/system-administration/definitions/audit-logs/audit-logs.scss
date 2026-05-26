@@ -1,0 +1,157 @@
+@use '/src/assets/styles/mixins' as *;
+.audit-logs {
+  @include flex-center(flex-start, flex-start);
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  align-self: stretch;
+
+  &__wrapper {
+    background-color: white;
+    flex-direction: column;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-secondary);
+    box-shadow: 0 1px 2px 0 var(--shadow-xs);
+    width: 100%;
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-4xl);
+      padding: var(--spacing-xl);
+    }
+
+    &-filters {
+      width: 100%;
+      border: 1px solid var(--border-secondary);
+      border-radius: var(--radius-lg);
+      background-color: var(--bg-primary-hover);
+      gap: var(--spacing-4xl);
+      padding: var(--spacing-3xl);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      &-actions {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: var(--spacing-xl);
+        button {
+          width: 250px;
+        }
+        .row {
+          display: flex;
+          align-items: center;
+          justify-content: end;
+          gap: var(--spacing-xs);
+        }
+      }
+    }
+  }
+
+  &__header {
+    @include flex-center(flex-start, flex-start);
+    width: 100%;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    color: var(--text-secondary-700);
+    line-height: var(--text-md);
+    /* 150% */
+    border-bottom: 1px solid var(--border-secondary);
+  }
+}
+
+.audit-modal {
+  padding: var(--spacing-xl) var(--spacing-3xl);
+  display: flex;
+  height: fit-content;
+  flex-direction: column;
+  gap: var(--spacing-3xl);
+  width: 100%;
+  @include flex-center(flex-start, flex-start);
+  flex-direction: column;
+  width: 100%;
+  padding: var(--spacing-xl) var(--spacing-3xl);
+  gap: 24px;
+  max-height: 100%;
+  overflow-y: auto;
+
+  &__collapsibles {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    width: 100%;
+    &-table {
+      background-color: var(--bg-primary);
+      width: 100%;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-secondary);
+      overflow: hidden;
+      &-row:not(:last-of-type) {
+        border-bottom: 1px solid var(--border-secondary);
+      }
+      &-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &-title {
+          @include text-style(text-primary-900, text-sm, 500, text-sm);
+          width: 200px;
+          padding: var(--spacing-xl) var(--spacing-3xl);
+          border-right: 1px solid var(--border-secondary);
+        }
+        &-value {
+          width: 100%;
+          @include text-style(text-tertiary-600, text-sm, 400, text-sm);
+          padding: var(--spacing-xl) var(--spacing-3xl);
+        }
+      }
+    }
+  }
+  &__tabs {
+    width: 100%;
+  }
+  &__detail {
+    min-height: fit-content;
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    &-row:nth-child(odd) {
+      background-color: var(--bg-secondary-alt);
+    }
+
+    &-row:nth-child(even) {
+      background-color: var(--bg-primary);
+    }
+    &-row:not(:last-of-type) {
+      border-bottom: solid 1px var(--border-secondary);
+    }
+    &-row {
+      display: flex;
+      min-height: 40px;
+      &-title {
+        padding: var(--spacing-xl) var(--spacing-3xl);
+        display: flex;
+        align-items: center;
+        @include text-style(text-primary-900, text-sm, 500, text-sm);
+        height: 100%;
+        width: 200px;
+      }
+      &-value {
+        padding: var(--spacing-xl) var(--spacing-3xl);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        @include text-style(text-tertiary-600, text-sm, 400, text-sm);
+      }
+    }
+  }
+}
+.audit-modal-actions {
+  padding: var(--spacing-3xl);
+  border-top: 1px solid var(--border-secondary);
+  width: 100%;
+  button {
+    margin-left: auto;
+  }
+}

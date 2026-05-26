@@ -1,0 +1,157 @@
+@use '/src/assets/styles/mixins' as *;
+
+.time-period-form-content {
+  @include flex-center(flex-start, flex-start);
+  flex-direction: column;
+  width: 100%;
+  padding: var(--spacing-xl) var(--spacing-3xl);
+  gap: 24px;
+  max-height: 500px;
+  overflow: hidden;
+  overflow-y: auto;
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3xl);
+    width: 100%;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    width: 100%;
+  }
+}
+
+.dv-submit-or-cancel-buttons.action-buttons {
+  justify-content: end;
+}
+
+.added-times-table {
+  width: 100%;
+  min-height: fit-content;
+  background-color: var(--bg-primary);
+  border: solid 1px var(--border-secondary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  &__header {
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    &-body {
+      display: grid;
+      border-bottom: solid 1px var(--border-secondary);
+      grid-template-columns: repeat(14, minmax(0, 1fr));
+      align-items: center;
+      &-groups {
+        display: grid;
+        grid-column: span 5 / span 5;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        &-group {
+          grid-column: span 1 / span 1;
+          border-collapse: collapse;
+          height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include text-style(text-tertiary-600, text-xs, 600, text-xs);
+          padding: var(--spacing-lg) var(--spacing-3xl);
+          border-right: solid 1px var(--border-secondary);
+        }
+      }
+      &-group {
+        grid-column: span 2 / span 2;
+        border-collapse: collapse;
+        height: 44px;
+        @include text-style(text-tertiary-600, text-xs, 600, text-xs);
+        padding: var(--spacing-lg) var(--spacing-3xl);
+        border-right: solid 1px var(--border-secondary);
+      }
+      &-group:last-of-type {
+        border-right: none !important;
+      }
+      &-group.title {
+        grid-column: span 3 / span 3;
+      }
+      &-group.end-date,
+      &-group.start-date {
+        grid-column: span 5 / span 5;
+      }
+      &-action,
+      &-group.action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-column: span 1 / span 1;
+      }
+    }
+  }
+  &__body-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-primary-hover);
+    // &-add-button {
+    //   display: flex;
+    //   grid-column: span 1 / span 1;
+    //   align-items: center;
+    //   justify-content: center;
+    // }
+  }
+  // &__header {
+  //   &-title {
+  //     height: 100%;
+  //     grid-column: span 3 / span 3;
+  //     border-right: solid 1px var(--border-secondary);
+  //   }
+  // }
+  &__body {
+    width: 100%;
+    grid-column: span 13 / span 13;
+
+    &-group {
+      border-bottom: solid 1px var(--border-secondary);
+      display: grid;
+      grid-template-columns: repeat(14, minmax(0, 1fr));
+      &-column {
+        padding: var(--spacing-lg) var(--spacing-3xl);
+        border-right: solid 1px var(--border-secondary);
+      }
+      &-column.action {
+        grid-column: span 1 / span 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &-section {
+        display: grid;
+        grid-column: span 5 / span 5;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        &-column {
+          display: flex;
+          border-right: solid 1px var(--border-secondary);
+          align-items: center;
+          justify-content: center;
+          grid-column: span 1 / span 1;
+          @include text-style(text-tertiary-600, text-sm, 400, text-sm);
+        }
+      }
+      &-group:last-of-type {
+        border-bottom: none !important;
+      }
+      &-column.title {
+        grid-column: span 3 / span 3;
+        @include text-style(text-tertiary-600, text-sm, 400, text-sm);
+      }
+    }
+
+    &-group:last-of-type {
+      border-bottom: none !important;
+    }
+  }
+}

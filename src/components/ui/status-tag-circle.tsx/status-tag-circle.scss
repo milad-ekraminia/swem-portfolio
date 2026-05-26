@@ -1,0 +1,13 @@
+@use '/src/assets/styles/mixins' as *;
+
+.status-tag-circle {
+  display: flex;
+  width: 20px !important;
+  height: 20px !important;
+  align-items: center;
+  border-radius: var(--radius-full);
+  width: fit-content;
+  border: 1px solid;
+  aspect-ratio: 1 !important;
+  @include flex-center(center, center);
+}
